@@ -1,8 +1,9 @@
 <template>
   <section class="py-16 md:py-12 sm:py-8 px-8 md:px-4 bg-linear-to-br from-dkm-light-blue to-[#d4e3f0]">
-    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-1 gap-8 md:gap-6 sm:gap-4">
+    <div class="vision-mission-grid max-w-5xl mx-auto">
       <!-- Vision Card -->
       <VisionMissionCard
+        class="vision-card"
         type="vision"
         title="Vision"
         :content="visionContent"
@@ -10,6 +11,7 @@
 
       <!-- Mission Card -->
       <VisionMissionCard
+        class="mission-card"
         type="mission"
         title="Mission"
         :missionItems="missionItems"
@@ -30,3 +32,33 @@ const missionItems = ref([
   'Ongoing communication with clients to fulfill client\'s requirements and needs in the best interest of clients.'
 ])
 </script>
+
+<style scoped>
+.vision-mission-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.vision-card {
+  order: 1;
+}
+
+.mission-card {
+  order: 2;
+}
+
+@media (min-width: 768px) {
+  .vision-mission-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .vision-mission-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+  }
+}
+</style>
