@@ -3,14 +3,14 @@
     <div class="max-w-5xl mx-auto">
       <!-- Header -->
       <div class="text-center mb-12 md:mb-8">
-        <span class="inline-block text-dkm-crimson text-xs font-bold tracking-widest uppercase mb-2 pb-2 border-b-2 border-dkm-crimson">TESTIMONIALS</span>
+        <span class="inline-block text-dkm-crimson text-sm font-bold tracking-widest uppercase mb-2 pb-2 border-b-2 border-dkm-crimson">TESTIMONIALS</span>
         <h2 class="text-4xl lg:text-3xl md:text-2xl font-bold text-dkm-dark m-0">What Customers Say</h2>
       </div>
 
       <!-- Testimonials Grid -->
-      <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 md:gap-6 sm:grid-cols-1">
-        <TestimonialCard 
-          v-for="(testimonial, index) in testimonials" 
+      <div class="testimonials-grid grid gap-8 md:gap-6">
+        <TestimonialCard
+          v-for="(testimonial, index) in testimonials"
           :key="index"
           :text="testimonial.text"
           :name="testimonial.name"
@@ -47,3 +47,15 @@ const testimonials = ref([
   }
 ])
 </script>
+
+<style scoped>
+.testimonials-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+</style>

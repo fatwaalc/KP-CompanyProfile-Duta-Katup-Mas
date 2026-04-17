@@ -1,10 +1,5 @@
 <template>
-  <section class="py-16 md:py-12 sm:py-8 px-8 sm:px-4 bg-linear-to-r from-dkm-dark to-dkm-dark/90 relative overflow-hidden">
-    <!-- Background Decorations -->
-    <div class="absolute top-0 left-0 right-0 bottom-0 pointer-events-none">
-      <div class="absolute top-1/2 left-1/5 w-96 h-96 rounded-full bg-dkm-crimson/5 blur-3xl"></div>
-      <div class="absolute top-4/5 right-1/5 w-96 h-96 rounded-full bg-dkm-crimson/5 blur-3xl"></div>
-    </div>
+  <section class="py-16 md:py-12 sm:py-8 px-8 sm:px-4 bg-white relative overflow-hidden">
 
     <div class="max-w-5xl mx-auto relative z-10">
       <!-- Section Header -->
@@ -12,7 +7,7 @@
         <span class="inline-block text-dkm-crimson text-sm font-bold tracking-widest uppercase mb-2 pb-2 border-b-2 border-dkm-crimson">
           TRUSTED BY INDUSTRY LEADERS
         </span>
-        <h2 class="text-5xl md:text-4xl sm:text-3xl font-bold text-white m-0 drop-shadow-lg">
+        <h2 class="text-4xl lg:text-3xl md:text-2xl font-bold text-dkm-dark m-0">
           Our Clients
         </h2>
       </div>

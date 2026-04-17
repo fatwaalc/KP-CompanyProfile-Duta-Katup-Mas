@@ -10,13 +10,14 @@
         </div>
       </div>
 
-      <!-- Navigation Buttons -->
-      <button class="absolute top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white border-0 p-3 rounded cursor-pointer transition-all duration-300 hover:bg-opacity-80 z-10 left-3" @click="prevSlide">
-        <ChevronLeft :size="24" />
-      </button>
-      <button class="absolute top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white border-0 p-3 rounded cursor-pointer transition-all duration-300 hover:bg-opacity-80 z-10 right-3" @click="nextSlide">
-        <ChevronRight :size="24" />
-      </button>
+      <!-- Carousel Navigation -->
+      <CarouselNavigation 
+        :currentIndex="currentSlide" 
+        :totalSlides="images.length"
+        @prev="prevSlide"
+        @next="nextSlide"
+        @goto="setSlide"
+      />
 
       <!-- Dot Indicators -->
       <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
@@ -50,7 +51,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import CarouselNavigation from '@/components/base/CarouselNavigation.vue'
 
 const props = defineProps({
   title: {

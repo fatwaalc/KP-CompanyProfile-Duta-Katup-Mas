@@ -1,25 +1,37 @@
 <template>
-  <router-link 
+  <router-link
     :to="service.link"
-    class="service-card"
+    class="group relative block h-70 sm:h-75 lg:h-80 overflow-hidden rounded-2xl no-underline shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
   >
     <!-- Image -->
-    <img 
-      :src="service.image" 
+    <img
+      :src="service.image"
       :alt="service.title"
-      class="service-card-img"
+      class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
     />
 
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/35 to-transparent transition-opacity duration-500"></div>
+    <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/45 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+
     <!-- Content -->
-    <div class="service-card-content">
-      <h3 class="service-card-title">
+    <div class="relative h-full flex flex-col justify-end p-5 md:p-4">
+      <p class="text-white/80 text-[11px] md:text-[10px] font-bold tracking-[0.16em] uppercase mb-2 transition-all duration-500 group-hover:text-white/90 group-hover:-translate-y-0.5">
+        {{ service.category }}
+      </p>
+      <h3 class="text-white text-2xl md:text-xl sm:text-lg font-extrabold leading-tight mb-4 md:mb-3 line-clamp-3 transition-transform duration-500 group-hover:-translate-y-1">
         {{ service.title }}
       </h3>
+      <span class="service-arrow-pulse inline-flex items-center justify-center w-11 h-11 md:w-10 md:h-10 rounded-full bg-white/20 backdrop-blur-xs border border-white/30 text-white transition-all duration-300 group-hover:bg-white/35 group-hover:translate-x-1">
+        <ChevronRight :size="20" class="md:w-5 md:h-5" />
+      </span>
     </div>
   </router-link>
 </template>
 
 <script setup>
+import { ChevronRight } from 'lucide-vue-next'
+
 defineProps({
   service: {
     type: Object,
@@ -29,83 +41,20 @@ defineProps({
 </script>
 
 <style scoped>
-.service-card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 8px;
-  overflow: hidden;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background: white;
-  height: 100%;
-}
-
-.service-card:hover {
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  transform: translateY(-4px);
-}
-
-/* Image */
-.service-card-img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.service-card:hover .service-card-img {
-  transform: scale(1.05);
-}
-
-/* Content */
-.service-card-content {
-  display: flex;
-  flex-direction: column;
-  padding: 1.25rem 1rem;
-  background: white;
-  flex: 1;
-  justify-content: center;
-}
-
-/* Title */
-.service-card-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #002157;
-  margin: 0;
-  line-height: 1.4;
-  text-align: center;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .service-card-img {
-    height: 160px;
+@keyframes subtlePulse {
+  0% {
+    transform: scale(1);
   }
-
-  .service-card-content {
-    padding: 1.25rem;
+  50% {
+    transform: scale(1.06);
   }
-
-  .service-card-title {
-    font-size: 1rem;
+  100% {
+    transform: scale(1);
   }
 }
 
-@media (max-width: 480px) {
-  .service-card-img {
-    height: 140px;
-  }
-
-  .service-card-title {
-    font-size: 0.9rem;
-  }
+.group:hover .service-arrow-pulse {
+  animation: subtlePulse 1.4s ease-in-out infinite;
 }
 </style>
 

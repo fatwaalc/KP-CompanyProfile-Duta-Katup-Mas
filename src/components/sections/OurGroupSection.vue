@@ -1,13 +1,13 @@
 <template>
-  <section class="bg-linear-to-r from-dkm-dark to-[#1a3a52] py-20 md:py-15 sm:py-10 px-8 md:px-6 relative overflow-hidden">
+  <section class="bg-white py-20 md:py-15 sm:py-10 px-8 md:px-6 relative overflow-hidden">
     <!-- Background decorations -->
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(220,20,60,0.05)_0%,transparent_50%),radial-gradient(circle_at_80%_80%,rgba(220,20,60,0.05)_0%,transparent_50%)] pointer-events-none"></div>
 
     <div class="max-w-6xl mx-auto relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-15 md:mb-10">
-        <p class="text-dkm-crimson text-sm font-bold tracking-wider uppercase m-0 mb-3 pb-2 border-b-2 border-dkm-crimson w-fit mx-auto block">OUR NETWORK</p>
-        <h2 class="text-4xl lg:text-3xl md:text-2xl font-bold text-white m-0 drop-shadow-lg">Our Group</h2>
+        <span class="inline-block text-dkm-crimson text-sm font-bold tracking-widest uppercase mb-2 pb-2 border-b-2 border-dkm-crimson">OUR NETWORK</span>
+        <h2 class="text-4xl lg:text-3xl md:text-2xl font-bold text-dkm-dark m-0 drop-shadow-lg">Our Group</h2>
       </div>
 
       <!-- Group Marquee -->

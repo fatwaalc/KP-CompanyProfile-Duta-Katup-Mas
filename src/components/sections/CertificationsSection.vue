@@ -54,26 +54,15 @@
                 <img :src="certImage.image" :alt="certImage.alt" class="w-full h-full object-cover" />
               </div>
             </div>
-          </div>
 
-          <!-- Navigation Buttons -->
-          <button class="absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-3 rounded transition-all z-10" @click="prevCertSlide" aria-label="Previous slide">
-            <ChevronLeft :size="24" />
-          </button>
-          <button class="absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-3 rounded transition-all z-10" @click="nextCertSlide" aria-label="Next slide">
-            <ChevronRight :size="24" />
-          </button>
-
-          <!-- Dot Indicators -->
-          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-            <button 
-              v-for="(_, index) in certImages" 
-              :key="index" 
-              class="w-2 h-2 rounded-full border-none cursor-pointer transition-all" 
-              :class="currentCertSlide === index ? 'bg-dkm-crimson w-6 rounded' : 'bg-white/50 hover:bg-white/80'"
-              @click="currentCertSlide = index"
-              :aria-label="`Go to slide ${index + 1}`"
-            ></button>
+            <!-- Carousel Navigation -->
+            <CarouselNavigation 
+              :currentIndex="currentCertSlide" 
+              :totalSlides="certImages.length"
+              @prev="prevCertSlide"
+              @next="nextCertSlide"
+              @goto="currentCertSlide = $event"
+            />
           </div>
         </div>
       </div>
@@ -83,7 +72,8 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { FileCheck, ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import { FileCheck } from 'lucide-vue-next'
+import CarouselNavigation from '@/components/base/CarouselNavigation.vue'
 import sertif1 from '@/assets/images/sertif1.png'
 import sertif2 from '@/assets/images/sertif2.png'
 import sertif3 from '@/assets/images/sertif3.png'

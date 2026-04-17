@@ -18,25 +18,15 @@
               <img :src="slide.image" :alt="slide.alt" class="w-full h-full object-cover" />
             </div>
           </div>
-        </div>
 
-        <!-- Navigation Buttons -->
-        <button class="absolute top-1/2 -translate-y-1/2 left-3 bg-black/50 text-white border-none px-3 py-3 rounded cursor-pointer transition-all z-10 hover:bg-black/80" @click="prevSlide">
-          <ChevronLeft :size="24" />
-        </button>
-        <button class="absolute top-1/2 -translate-y-1/2 right-3 bg-black/50 text-white border-none px-3 py-3 rounded cursor-pointer transition-all z-10 hover:bg-black/80" @click="nextSlide">
-          <ChevronRight :size="24" />
-        </button>
-
-        <!-- Dot Indicators -->
-        <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-3 z-10">
-          <button 
-            v-for="(_, index) in slides" 
-            :key="index" 
-            :class="{ 'bg-dkm-crimson w-8 rounded': currentSlide === index, 'w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white/80': currentSlide !== index }"
-            class="border-none cursor-pointer transition-all"
-            @click="currentSlide = index"
-          ></button>
+          <!-- Carousel Navigation -->
+          <CarouselNavigation 
+            :currentIndex="currentSlide" 
+            :totalSlides="slides.length"
+            @prev="prevSlide"
+            @next="nextSlide"
+            @goto="currentSlide = $event"
+          />
         </div>
       </div>
 
@@ -83,7 +73,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import CarouselNavigation from '@/components/base/CarouselNavigation.vue'
 import team1 from '@/assets/images/team1.jpg'
 import team2 from '@/assets/images/team2.jpg'
 import team3 from '@/assets/images/team3.jpg'

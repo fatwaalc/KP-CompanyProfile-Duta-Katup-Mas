@@ -1,16 +1,18 @@
 <template>
-  <div style="display: flex; justify-content: center; margin-top: 2rem;">
-    <router-link 
-      :to="link" 
-      class="view-all-btn"
+  <div class="mt-8 flex justify-center">
+    <router-link
+      :to="link"
+      class="view-all-link group inline-flex w-fit items-center gap-2 px-7 py-3 bg-dkm-dark text-white border-2 border-dkm-dark rounded text-base font-semibold no-underline cursor-pointer transition-all duration-300 ease-out hover:-translate-y-0.5"
     >
       {{ label }}
-      <span class="btn-arrow">→</span>
+      <CircleArrowRight class="view-all-arrow w-5 h-5 transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
     </router-link>
   </div>
 </template>
 
 <script setup>
+import { CircleArrowRight } from 'lucide-vue-next'
+
 defineProps({
   label: {
     type: String,
@@ -24,35 +26,12 @@ defineProps({
 </script>
 
 <style scoped>
-.view-all-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-  padding: 12px 28px;
-  background-color: #002157;
-  color: white;
-  border: 2px solid #002157;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.view-all-btn:hover {
+.view-all-link:hover {
   background-color: #dc143c;
   border-color: #dc143c;
-  transform: translateY(-2px);
 }
 
-.btn-arrow {
-  font-size: 1.25rem;
-  transition: transform 0.3s ease;
-}
-
-.view-all-btn:hover .btn-arrow {
+.view-all-link:hover .view-all-arrow {
   transform: translateX(5px);
 }
 </style>
