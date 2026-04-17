@@ -16,8 +16,8 @@
         v-for="(_, index) in totalSlides" 
         :key="index"
         @click="goToSlide(index)"
-        :class="currentIndex === index ? 'bg-white w-8 rounded' : 'bg-white/50 hover:bg-white/70 w-2.5 h-2.5 rounded-full'"
-        class="h-2.5 border-none cursor-pointer transition-all duration-300"
+        :class="currentIndex === index ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/70'"
+        class="w-2.5 h-2.5 rounded-full border-none cursor-pointer transition-all duration-300"
         :aria-label="`Go to slide ${index + 1}`"
       ></button>
     </div>

@@ -1,14 +1,14 @@
 <template>
-  <section class="our-equipment">
-    <div class="oe-container">
+  <section class="bg-white py-10 sm:py-12 lg:py-16 xl:py-20 px-4 sm:px-5 lg:px-6">
+    <div class="max-w-6xl mx-auto">
       <!-- Header -->
-      <div class="oe-header">
-        <span class="oe-label">EQUIPMENT</span>
-        <h2 class="oe-title">Our Tools & Equipment</h2>
+      <div class="text-center mb-8 sm:mb-10 lg:mb-15">
+        <span class="inline-block text-dkm-crimson text-xs sm:text-sm font-bold tracking-widest uppercase mb-3 sm:mb-4 pb-2 sm:pb-3 border-b-2 border-dkm-crimson">EQUIPMENT</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-4xl xl:text-4xl font-bold text-dkm-dark m-0">Our Tools &amp; Equipment</h2>
       </div>
 
       <!-- Equipment List -->
-      <div class="oe-list">
+      <div class="flex flex-col gap-7 lg:gap-10">
         <EquipmentCard v-for="(equipment, index) in equipmentList" :key="index" :equipment="equipment" />
       </div>
     </div>
@@ -41,94 +41,3 @@ const equipmentList = ref([
   }
 ])
 </script>
-
-<style scoped>
-.our-equipment {
-  background: white;
-  padding: 80px 20px;
-}
-
-.oe-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Header */
-.oe-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.oe-label {
-  display: inline-block;
-  color: #dc143c;
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid #dc143c;
-}
-
-.oe-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #002157;
-  margin: 0;
-}
-
-/* Equipment List */
-.oe-list {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .our-equipment {
-    padding: 60px 20px;
-  }
-
-  .oe-header {
-    margin-bottom: 40px;
-  }
-
-  .oe-title {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .our-equipment {
-    padding: 50px 20px;
-  }
-
-  .oe-header {
-    margin-bottom: 30px;
-  }
-
-  .oe-title {
-    font-size: 1.75rem;
-  }
-
-  .oe-list {
-    gap: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .our-equipment {
-    padding: 40px 16px;
-  }
-
-  .oe-label {
-    font-size: 0.75rem;
-  }
-
-  .oe-title {
-    font-size: 1.5rem;
-  }
-}
-</style>
