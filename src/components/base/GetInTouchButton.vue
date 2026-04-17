@@ -1,32 +1,33 @@
 <template>
-  <button 
-    @click="handleClick"
-    class="inline-flex items-center gap-2 px-7 py-3 md:px-6 md:py-2.5 sm:px-5 sm:py-2 bg-dkm-crimson text-white font-semibold text-sm md:text-xs sm:text-xs rounded-md border-2 border-dkm-crimson cursor-pointer transition-all duration-300 ease-out hover:bg-dkm-dark-red hover:border-dkm-dark-red hover:-translate-y-0.5 hover:shadow-lg hover:shadow-red-500/30"
+  <button
+    @click="emit('click')"
+    class="inline-flex items-center gap-2 px-4 py-2 bg-dkm-crimson text-white font-semibold text-sm rounded-md border border-dkm-crimson cursor-pointer transition-all duration-200"
     :title="label"
+    type="button"
   >
-    <Send :size="18" />
-    {{ label }}
+    <span>{{ label }}</span>
+    <Send class="w-4 h-4" />
   </button>
 </template>
 
 <script setup>
 import { Send } from 'lucide-vue-next'
 
-const props = defineProps({
+defineProps({
   label: {
     type: String,
-    default: 'Get in Touch'
-  },
-  onAction: {
-    type: Function,
-    default: null
+    default: 'Get In Touch'
   }
 })
 
-const handleClick = () => {
-  if (props.onAction) {
-    props.onAction()
-  }
-}
+const emit = defineEmits(['click'])
 </script>
+
+<style scoped>
+button:hover {
+  background-color: #a00a28;
+  border-color: #a00a28;
+  transform: translateY(-1px);
+}
+</style>
 
