@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar" :class="{ 'navbar-hidden': isNavbarHidden }">
     <div class="navbar-container">
       <!-- Logo -->
       <div class="navbar-logo">
@@ -186,6 +186,11 @@ const toggleDropdownOnMobile = (dropdown) => {
   top: 0;
   z-index: 1000;
   width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.navbar.navbar-hidden {
+  transform: translateY(-100%);
 }
 
 .navbar-container {
@@ -290,6 +295,16 @@ const toggleDropdownOnMobile = (dropdown) => {
   .dropdown-header .nav-link {
     flex: 1;
     padding-right: 0;
+  }
+
+  .nav-item.dropdown .nav-link::after {
+    left: 0;
+    transform: none;
+  }
+
+  .nav-item.dropdown:hover .nav-link::after,
+  .nav-item.dropdown.active .nav-link::after {
+    width: calc(100% + 2.25rem);
   }
 
   .dropdown-chevron {
