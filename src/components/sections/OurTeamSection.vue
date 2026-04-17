@@ -30,43 +30,6 @@
         </div>
       </div>
 
-      <!-- Stats Cards -->
-      <div class="grid grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-8 md:gap-5">
-        <!-- Total Employees Card -->
-        <div class="bg-white p-10 md:p-6 sm:p-5 rounded-xl flex md:flex-col items-center gap-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all">
-          <div class="w-16 h-16 md:w-14 md:h-14 sm:w-12 sm:h-12 bg-linear-to-br from-dkm-dark to-[#1a4d8f] rounded-lg flex items-center justify-center text-white shrink-0">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-          </div>
-          <div class="flex flex-col gap-2">
-            <p class="m-0 text-4xl md:text-3xl font-bold text-dkm-dark leading-none">
-              <span class="text-dkm-crimson" ref="employeeCountRef">0</span><span class="text-dkm-crimson text-2xl md:text-xl">+</span>
-            </p>
-            <p class="m-0 text-sm text-gray-600 md:text-center">Total Employees</p>
-          </div>
-        </div>
-
-        <!-- Certified Engineers Card -->
-        <div class="bg-white p-10 md:p-6 sm:p-5 rounded-xl flex md:flex-col items-center gap-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all">
-          <div class="w-16 h-16 md:w-14 md:h-14 sm:w-12 sm:h-12 bg-linear-to-br from-dkm-dark to-[#1a4d8f] rounded-lg flex items-center justify-center text-white shrink-0">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8">
-              <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
-              <path d="M12.5 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V11.5"></path>
-              <path d="M21 5h-4M19 3v4"></path>
-            </svg>
-          </div>
-          <div class="flex flex-col gap-2">
-            <p class="m-0 text-4xl md:text-3xl font-bold text-dkm-dark leading-none">
-              <span class="text-dkm-crimson" ref="engineerCountRef">0</span><span class="text-dkm-crimson text-2xl md:text-xl">+</span>
-            </p>
-            <p class="m-0 text-sm text-gray-600 md:text-center">Certified Engineers</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 </template>
@@ -85,8 +48,6 @@ const slides = ref([
 ])
 
 const currentSlide = ref(0)
-const employeeCountRef = ref(null)
-const engineerCountRef = ref(null)
 const autoPlayInterval = ref(null)
 
 const prevSlide = () => {
@@ -105,23 +66,7 @@ const stopAutoPlay = () => {
   if (autoPlayInterval.value) clearInterval(autoPlayInterval.value)
 }
 
-const animateCountUp = (element, target, duration = 2000) => {
-  if (!element) return
-  const increment = target / (duration / 16)
-  let current = 0
-  const update = () => {
-    current += increment
-    element.textContent = Math.floor(Math.min(current, target))
-    if (current < target) requestAnimationFrame(update)
-  }
-  update()
-}
-
 onMounted(() => {
-  setTimeout(() => {
-    animateCountUp(employeeCountRef.value, 80)
-    animateCountUp(engineerCountRef.value, 30)
-  }, 300)
   startAutoPlay()
 })
 
