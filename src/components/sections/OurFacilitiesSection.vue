@@ -1,25 +1,25 @@
 <template>
-  <section class="our-facilities">
-    <div class="of-container">
+  <section class="bg-linear-to-br from-dkm-light-blue to-[#d4e3f0] py-10 sm:py-12 lg:py-16 xl:py-20 px-4 sm:px-5 lg:px-6">
+    <div class="max-w-6xl mx-auto">
       <!-- Header -->
-      <div class="of-header">
-        <span class="of-label">OUR FACILITIES</span>
-        <h2 class="of-title">Workshop & Office</h2>
+      <div class="text-center mb-8 sm:mb-10 lg:mb-15">
+        <span class="inline-block text-dkm-crimson text-xs sm:text-sm font-bold tracking-widest uppercase mb-3 sm:mb-4 pb-2 sm:pb-3 border-b-2 border-dkm-crimson">OUR FACILITIES</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-4xl xl:text-4xl font-bold text-dkm-dark m-0">Workshop &amp; Office</h2>
       </div>
 
       <!-- Facilities Grid -->
-      <div class="of-grid">
+      <div class="facilities-grid gap-5 sm:gap-7 lg:gap-10">
         <FacilitiesCard 
           title="Workshop"
           :images="workshopImages"
           :descriptions="workshopDescriptions"
-          :isWorkshop="true"
+          :is-workshop="true"
         />
-        <FacilitiesCard 
+        <FacilitiesCard
           title="Office"
           :images="officeImages"
           :descriptions="officeDescriptions"
-          :isWorkshop="false"
+          :is-workshop="false"
         />
       </div>
     </div>
@@ -62,97 +62,14 @@ const officeDescriptions = ref([
 </script>
 
 <style scoped>
-.our-facilities {
-  background: linear-gradient(135deg, #e8f0f7 0%, #d4e3f0 100%);
-  padding: 80px 20px;
-}
-
-.of-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Header */
-.of-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.of-label {
-  display: inline-block;
-  color: #dc143c;
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid #dc143c;
-}
-
-.of-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #002157;
-  margin: 0;
-}
-
-/* Grid */
-.of-grid {
+.facilities-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .our-facilities {
-    padding: 60px 20px;
-  }
-
-  .of-header {
-    margin-bottom: 40px;
-  }
-
-  .of-title {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .our-facilities {
-    padding: 50px 20px;
-  }
-
-  .of-header {
-    margin-bottom: 30px;
-  }
-
-  .of-title {
-    font-size: 1.75rem;
-  }
-
-  .of-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .our-facilities {
-    padding: 40px 16px;
-  }
-
-  .of-label {
-    font-size: 0.75rem;
-  }
-
-  .of-title {
-    font-size: 1.5rem;
-  }
-
-  .of-grid {
-    gap: 20px;
+@media (min-width: 1024px) {
+  .facilities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 </style>

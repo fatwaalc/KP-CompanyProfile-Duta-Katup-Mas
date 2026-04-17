@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_16px_40px_rgba(0,33,87,0.15)] animate-slide-in-up" :class="{ 'delay-200': isWorkshop, 'delay-300': !isWorkshop }">
+  <div class="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_16px_40px_rgba(0,33,87,0.15)] animate-slide-in-up" :class="{ 'delay-200': isWorkshopCard, 'delay-300': !isWorkshopCard }">
     <!-- Carousel -->
     <div class="relative w-full pb-[75%] bg-black overflow-hidden">
       <div class="absolute top-0 left-0 w-full h-full">
@@ -18,27 +18,16 @@
         @next="nextSlide"
         @goto="setSlide"
       />
-
-      <!-- Dot Indicators -->
-      <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        <button 
-          v-for="(_, index) in images" 
-          :key="index" 
-          class="w-2.5 h-2.5 rounded-full bg-white bg-opacity-50 border-0 cursor-pointer transition-all duration-300" 
-          :class="{ 'bg-opacity-100 scale-125': currentSlide === index }"
-          @click="setSlide(index)"
-        ></button>
-      </div>
     </div>
 
     <!-- Card Content -->
     <div class="p-7.5 md:p-5">
       <div class="flex items-center gap-4 mb-4 md:gap-3">
-        <span class="w-10 h-10 min-w-10 flex items-center justify-center rounded-lg text-white text-base" :class="{ 'bg-gradient-to-br from-dkm-dark to-[#003080]': isWorkshop, 'bg-gradient-to-br from-dkm-crimson to-dkm-dark-red': !isWorkshop }">
-          <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-            <path v-if="isWorkshop" d="M3 9h18v10c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V9zm0-3h18V4c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v2zm6 6h2v4h-2v-4zm4 0h2v4h-2v-4zm-8 0h2v4H5v-4z"/>
-            <path v-else d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm4 8H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm4 12h-2V9h2v12zm4 0h-2v-7h2v7z"/>
-          </svg>
+        <span class="w-10 h-10 min-w-10 flex items-center justify-center rounded-lg text-white text-base" :class="{ 'bg-dkm-dark': isWorkshopCard, 'bg-dkm-crimson': !isWorkshopCard }">
+          <ToolboxIcon v-if="isWorkshopCard" :size="20" :stroke-width="2.4" class="text-white" />
+          <span v-else class="office-icon" aria-hidden="true">
+            <span class="office-icon-door"></span>
+          </span>
         </span>
         <h3 class="text-xl font-bold text-dkm-dark m-0 md:text-lg">{{ title }}</h3>
       </div>
@@ -50,7 +39,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
+import { Toolbox as ToolboxIcon } from 'lucide-vue-next'
 import CarouselNavigation from '@/components/base/CarouselNavigation.vue'
 
 const props = defineProps({
@@ -74,6 +64,10 @@ const props = defineProps({
 
 const currentSlide = ref(0)
 let autoAdvanceInterval = null
+
+const isWorkshopCard = computed(() => {
+  return props.isWorkshop || /workshop/i.test(props.title)
+})
 
 // Auto-advance carousel
 const startAutoAdvance = () => {
@@ -127,3 +121,43 @@ onUnmounted(() => {
   stopAutoAdvance()
 })
 </script>
+
+<style scoped>
+.office-icon {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  border-bottom-width: 3px;
+  border-radius: 2px;
+}
+
+.office-icon::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  box-shadow:
+    4px 0 0 #fff,
+    8px 0 0 #fff,
+    0 4px 0 #fff,
+    4px 4px 0 #fff,
+    8px 4px 0 #fff;
+}
+
+.office-icon-door {
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  width: 4px;
+  height: 6px;
+  transform: translateX(-50%);
+  background: #fff;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+}
+</style>
