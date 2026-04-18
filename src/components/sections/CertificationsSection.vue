@@ -76,7 +76,6 @@ import { FileCheck } from 'lucide-vue-next'
 import CarouselNavigation from '@/components/base/CarouselNavigation.vue'
 import sertif1 from '@/assets/images/sertif1.png'
 import sertif2 from '@/assets/images/sertif2.png'
-import sertif3 from '@/assets/images/sertif3.png'
 
 // Carousel images data
 const certImages = ref([
@@ -87,10 +86,6 @@ const certImages = ref([
   {
     image: sertif2,
     alt: 'ISO 14001:2015 Certification'
-  },
-  {
-    image: sertif3,
-    alt: 'ISO 45001:2018 Certification'
   },
   {
     image: sertif1,
