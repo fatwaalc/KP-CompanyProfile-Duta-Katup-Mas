@@ -1,306 +1,212 @@
 # PT. Duta Katup Mas - Company Profile Website
 
-![Vue 3](https://img.shields.io/badge/Vue-3.4+-4FC08D?style=flat-square&logo=vue.js)
-![Vite](https://img.shields.io/badge/Vite-5.0+-646CFF?style=flat-square&logo=vite)
+![Vue 3](https://img.shields.io/badge/Vue-3.5+-4FC08D?style=flat-square&logo=vue.js)
+![Vite](https://img.shields.io/badge/Vite-8+-646CFF?style=flat-square&logo=vite)
 ![Node](https://img.shields.io/badge/Node-18+-339933?style=flat-square&logo=node.js)
-![Responsive](https://img.shields.io/badge/Responsive-Mobile%20First-FF6B6B?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-Sebuah website profile profesional untuk **PT. Duta Katup Mas** yang dibangun dengan teknologi Vue 3 dan Vite. Website ini menampilkan informasi perusahaan, layanan, produk, fasilitas, tim, dan testimonial klien dengan desain modern dan responsif.
+Website company profile untuk PT. Duta Katup Mas yang dibangun menggunakan Vue 3 dan Vite. Proyek ini menampilkan informasi perusahaan, layanan, produk, fasilitas, tim, testimoni, serta informasi kontak dalam tampilan modern dan responsif.
 
-## 🎯 Deskripsi Proyek
+Dokumen ini disusun untuk kebutuhan pengembangan internal perusahaan dan mitra yang memiliki otorisasi.
 
-PT. Duta Katup Mas adalah perusahaan yang bergerak di bidang manufaktur dan distribusi valve (katup). Website ini berfungsi sebagai platform untuk:
+## Ringkasan
 
-- **Profil Perusahaan**: Visi, misi, dan sejarah PT. Duta Katup Mas
-- **Showcase Layanan**: Menampilkan berbagai layanan yang ditawarkan
-- **Katalog Produk**: Informasi lengkap mengenai produk dan spesifikasi
-- **Fasilitas & Peralatan**: Dokumentasi tentang fasilitas produksi dan equipment modern
-- **Tim Profesional**: Menampilkan team members dan profesionalisme perusahaan
-- **Testimonial Klien**: Kepercayaan dan testimoni dari klien-klien terkemuka
-- **Kontak & Lokasi**: Informasi kontak dan lokasi cabang perusahaan
-- **E-Commerce Integration**: Link ke toko online PaDi UMKM untuk penjualan retail
+Website ini difokuskan untuk:
+- Menampilkan profil dan kapabilitas perusahaan secara profesional.
+- Menyajikan layanan, fasilitas, dan produk secara visual.
+- Memudahkan calon klien menghubungi perusahaan.
+- Menjaga performa dan maintainability dengan arsitektur komponen.
 
-## ✨ Fitur Utama
+## Fitur Utama
 
-### 🏗️ Arsitektur & Kualitas Kode
-- ✅ **Component-Based Architecture**: Modular dan reusable Vue components
-- ✅ **Code Optimization**: Extracted reusable components (~800+ lines reduced code)
-- ✅ **SEO Optimized**: Meta tags dan semantic HTML structure
-- ✅ **Performance Focused**: Lazy loading dan optimized assets
+- Multi-page website berbasis Vue Router.
+- Struktur komponen modular (base, common, layout, section).
+- Carousel untuk equipment, fasilitas, tim, dan testimoni.
+- Navbar responsif dengan active state dan dropdown menu.
+- Integrasi media (gambar, video, logo klien/partner).
+- Tampilan mobile-first untuk desktop, tablet, dan mobile.
+- UI interaktif dengan transisi dan animasi halus.
 
-### 🎨 User Interface & Experience
-- ✅ **Modern Design**: Gradient backgrounds dan smooth animations
-- ✅ **Interactive Elements**: Carousel, dropdown menus, hover effects
-- ✅ **Responsive Design**: Mobile-first approach dengan breakpoints di 480px, 768px, 1024px
-- ✅ **Accessibility**: Proper semantic HTML dan ARIA attributes
+## Kebijakan Proyek Perusahaan
 
-### 🎬 Konten & Media
-- ✅ **Video Integration**: YouTube video player di hero section dan company video section
-- ✅ **Image Gallery**: Product showcase dan facilities gallery
-- ✅ **Carousel/Slideshow**: Multi-slide presentation untuk berbagai konten
-- ✅ **Logo Marquee**: Animated scrolling logos untuk klien dan partners
+- Seluruh perubahan konten perusahaan harus melalui persetujuan PIC/owner bisnis terkait.
+- Informasi sensitif (data klien, kontak internal, dokumen legal, kredensial) tidak boleh disimpan di repository.
+- Asset visual (logo, foto, sertifikat, video) wajib memiliki izin penggunaan yang jelas.
+- Perubahan pada identitas merek (logo, warna, tagline) harus mengikuti brand guideline resmi perusahaan.
+- Rilis ke production wajib melewati proses review teknis dan approval manajemen yang berwenang.
 
-### 🔧 Navigasi & Struktur
-- ✅ **Multi-Page Navigation**: Router-based navigation untuk berbagai halaman
-- ✅ **Active State Tracking**: Indikator halaman aktif dengan animated effects
-- ✅ **Dropdown Menus**: Dropdown menu untuk nested navigation pages
-- ✅ **Smooth Scrolling**: Smooth navigation experience
+## Keamanan Dan Kepatuhan
 
-### 📱 Responsive & Cross-Device
-- ✅ **Mobile Optimized**: Perfect rendering di semua ukuran layar
-- ✅ **Tablet Support**: Optimized layout untuk tablet devices
-- ✅ **Desktop Experience**: Full-featured desktop layout dengan hover effects
+- Jangan commit file `.env`, token API, password, atau secret lain.
+- Gunakan variabel environment untuk konfigurasi sensitif.
+- Jika menemukan celah keamanan, laporkan secara private ke maintainer proyek, jangan dipublikasikan di issue publik.
+- Pastikan dependensi yang digunakan masih aktif dan tidak memiliki kerentanan kritis.
 
-## 🛠️ Tech Stack
+## Teknologi Yang Digunakan
 
-### Frontend Framework
-- **Vue 3.5+** - Progressive JavaScript framework dengan Composition API
-- **Vite 8.0+** - Next-generation frontend build tool dengan optimized dev server
-- **Vue Router 4.0+** - Client-side routing untuk multi-page navigation
+### Frontend
+- Vue 3
+- Vue Router 4
+- Vite
 
-### Styling & CSS Framework
-- **Tailwind CSS 4.0+** - Utility-first CSS framework (@tailwindcss/postcss, @tailwindcss/vite)
-- **PostCSS** - CSS transformation with autoprefixer
-- **Responsive Design** - Mobile-first approach dengan Tailwind breakpoints
-- **Custom Animations** - Slide-in effects dan hover animations
+### Styling
+- Tailwind CSS 4
+- PostCSS
+- Autoprefixer
 
-### Icons & Utilities
-- **Lucide Vue Next 1.0+** - Beautiful SVG icons library dengan 1000+ icons
-- **Gradient & Color System** - Custom Tailwind color palette dengan navy (#002157), crimson (#dc143c), light blue gradients
+### Library Tambahan
+- lucide-vue-next (ikon)
 
-### Development Tools & Build
-- **Node.js 18+** - JavaScript runtime
-- **NPM 9+** - Package manager
-- **Hot Module Replacement (HMR)** - Real-time development updates
-- **Build Optimization** - Tree-shaking, code-splitting, asset compression
+### Tooling
+- Node.js 18+
+- npm 9+
 
-### Browser Support
-- ✅ Chrome (latest)
-- ✅ Firefox (latest)
-- ✅ Safari (latest)
-- ✅ Edge (latest)
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
+## Prasyarat Instalasi
 
-## 📦 Instalasi & Setup
+Pastikan environment lokal sudah memiliki:
+- Node.js versi 18 atau lebih baru.
+- npm versi 9 atau lebih baru.
+- Git.
 
-### Prerequisites
-- Node.js 18.x atau lebih tinggi
-- NPM 9.x atau lebih tinggi
-- Git untuk version control
+## Instalasi Dan Menjalankan Proyek
 
-### Langkah Instalasi
+1. Clone repository
 
-1. **Clone Repository**
-   ```bash
-   git clone https://github.com/yourusername/dkm-company-profile.git
-   cd dkm-company-profile/my-project
-   ```
-
-2. **Install Dependencies**
-   ```bash
-   npm install
-   ```
-   Dependencies yang akan diinstall:
-   - vue@^3.5.32
-   - vue-router@^4.0.13
-   - lucide-vue-next@^1.0.0
-   - tailwindcss@^4.0.0
-   - @tailwindcss/postcss@^4.0.0
-   - @tailwindcss/vite@^4.0.0
-   - vite@^8.0.4
-   - @vitejs/plugin-vue@^6.0.5
-   - autoprefixer@^10.5.0
-
-3. **Run Development Server**
-   ```bash
-   npm run dev
-   ```
-   Website akan accessible di `http://localhost:5173` (atau port berikutnya jika sudah terpakai)
-   - HMR enabled untuk real-time updates
-   - Tailwind CSS akan auto-compile
-
-4. **Build untuk Production**
-   ```bash
-   npm run build
-   ```
-   Menghasilkan optimized build di folder `dist/`
-
-5. **Preview Production Build**
-   ```bash
-   npm run preview
-   ```
-   Preview build sebelum deployment
-
-## 📂 Struktur Proyek
-
-```
-my-project/
-├── src/
-│   ├── components/
-│   │   ├── base/                    # Base/reusable components
-│   │   │   ├── GetInTouchButton.vue        # CTA button dengan Send icon
-│   │   │   ├── LearnMoreButton.vue         # Learn more CTA button
-│   │   │   ├── ViewAllLink.vue             # View all link component
-│   │   │   ├── ServiceCard.vue             # Service card template
-│   │   │   ├── CTAButtonGroup.vue          # CTA buttons group
-│   │   │   ├── WatchYoutubeButton.vue      # YouTube player button
-│   │   │   ├── ChevronDown.vue             # Dropdown chevron icon
-│   │   │   ├── EquipmentCard.vue           # Equipment carousel card
-│   │   │   ├── FacilitiesCard.vue          # Facilities carousel card
-│   │   │   ├── VisionMissionCard.vue       # Vision/mission card dengan Goal icons
-│   │   │   └── LearnMoreButton.vue
-│   │   │
-│   │   ├── common/                  # Shared components
-│   │   │   ├── Navbar.vue                  # Navigation bar dengan active state & animations
-│   │   │   └── Footer.vue                  # Footer component
-│   │   │
-│   │   ├── layouts/                 # Layout components
-│   │   │   └── MainLayout.vue              # Main layout wrapper
-│   │   │
-│   │   └── sections/                # Page sections/blocks
-│   │       ├── HeroSection.vue             # Hero banner untuk home page
-│   │       ├── AboutHeroSection.vue        # Hero untuk about page
-│   │       ├── WhoWeAreSection.vue         # Company overview
-│   │       ├── VisionMissionSection.vue    # Vision & mission display
-│   │       ├── OurServicesSection.vue      # Services showcase
-│   │       ├── OurEquipmentSection.vue     # Equipment carousel
-│   │       ├── OurFacilitiesSection.vue    # Facilities carousel
-│   │       ├── OurTeamSection.vue          # Team member carousel
-│   │       ├── CertificationsSection.vue   # Certifications carousel
-│   │       ├── OurClientsSection.vue       # Client logos marquee
-│   │       ├── TestimonialsSection.vue     # Testimonials carousel
-│   │       ├── OnlineStoreSection.vue      # E-commerce link (PaDi UMKM)
-│   │       ├── LocationSection.vue         # Company locations
-│   │       ├── ChairmanNoteSection.vue     # Chairman's message
-│   │       ├── CompanyVideoSection.vue     # YouTube video embed
-│   │       ├── OurGroupSection.vue         # Group companies info
-│   │       ├── ProductsHeroSection.vue     # Products page hero
-│   │       ├── ServicesHeroSection.vue     # Services page hero
-│   │       ├── AboutUsSection.vue          # About us content
-│   │       ├── CertificationsSection.vue   # Certifications info
-│   │       └── ServiceDetailCard.vue       # Individual service detail
-│   │
-│   ├── views/                       # Page components
-│   │   ├── HomeView.vue                    # Landing page
-│   │   ├── AboutView.vue                   # About page
-│   │   ├── ServicesView.vue                # Services page
-│   │   ├── ProductsView.vue                # Products page
-│   │   └── ContactView.vue                 # Contact page
-│   │
-│   ├── router/
-│   │   └── index.js                 # Vue Router configuration
-│   │
-│   ├── assets/
-│   │   ├── images/                  # Image assets
-│   │   ├── main.css                 # Global styles
-│   │   └── videos/                  # Video assets
-│   │
-│   ├── App.vue                      # Root component
-│   ├── main.js                      # Application entry point
-│   └── style.css                    # Global styles
-│
-├── public/
-│   └── videos/                      # Static video files
-│
-├── index.html                       # HTML entry point
-├── vite.config.js                   # Vite configuration
-└── package.json                     # Dependencies & scripts
+```bash
+git clone https://github.com/fatwaalc/KP-CompanyProfile-Duta-Katup-Mas.git
+cd Company Profile DKM/my-project
 ```
 
-## 🎨 Color Palette & Design System
+2. Install dependency
 
-### Primary Colors
-- **Dark Blue**: `#002157` - Primary brand color
-- **Crimson Red**: `#dc143c` - CTA and accent color
-- **Dark Red Hover**: `#a00a28` - Hover state for CTAs
+```bash
+npm install
+```
 
-### Gradient Colors
-- **Blue Gradient**: `#e8f0f7 → #d4e3f0` - Section backgrounds
-- **Navy Gradient**: `#4169e1 → #1e90ff` - Vision card accents
-- **Crimson Gradient**: `#dc143c → #a00a28` - Mission card accents
+3. Jalankan mode development
 
-### Neutral Colors
-- **White**: `#ffffff` - Background and text
-- **Light Gray**: `#f5f5f5` - Subtle backgrounds
-- **Dark Gray**: `#666666` - Secondary text
-- **Dark Text**: `#333333` - Primary text
-
-## 🔑 Komponen Utama
-
-### Base Components
-| Komponen | Deskripsi | Fitur |
-|----------|-----------|-------|
-| `GetInTouchButton.vue` | CTA button untuk kontak | Send icon, hover animation |
-| `LearnMoreButton.vue` | Learn more button | Clickable with navigation |
-| `ViewAllLink.vue` | View all link | Inline link dengan styling |
-| `ServiceCard.vue` | Service display card | Icon, title, description |
-| `EquipmentCard.vue` | Equipment carousel item | Image, details, responsive |
-| `FacilitiesCard.vue` | Facilities carousel item | Standard carousel button styling |
-| `VisionMissionCard.vue` | Vision/mission display | Goal icons untuk mission bullets |
-
-### Section Components
-- **HeroSection**: Full-width hero dengan background image dan CTA buttons
-- **VisionMissionSection**: Dual cards untuk vision dan mission dengan icons
-- **OurServicesSection**: Grid layout untuk service cards
-- **OurEquipmentSection**: Auto-advance carousel dengan manual navigation
-- **OurTeamSection**: Team member carousel dengan standardized buttons
-- **TestimonialsSection**: Client testimonials dengan carousel
-- **LocationSection**: Interactive location display
-- **OnlineStoreSection**: E-commerce integration dengan background image
-
-## 🎭 Fitur Interaktif
-
-### Navbar
-- ✅ Active state tracking untuk halaman saat ini
-- ✅ Animated underline effect on hover (desktop)
-- ✅ Left border animation (mobile)
-- ✅ Dropdown menus dengan 200ms delay untuk smooth interaction
-- ✅ Responsive layout untuk mobile dan desktop
-
-### Carousels
-- ✅ Auto-advance dengan timer
-- ✅ Manual navigation dengan previous/next buttons
-- ✅ Dot indicators untuk slide progress
-- ✅ Standardized button styling across all carousels
-- ✅ Responsive item display
-
-### Animations
-- ✅ Smooth scroll animations (slideInDown, slideInUp, slideInLeft)
-- ✅ Hover scale effects
-- ✅ Color transitions
-- ✅ Transform animations pada cards
-- ✅ CSS cubic-bezier easing functions
-
-## 📱 Responsive Breakpoints
-
-| Breakpoint | Device | Fitur |
-|-----------|--------|-------|
-| 1024px | Desktop | Full layout dengan hover effects |
-| 768px | Tablet | Adjusted spacing, optimized layout |
-| 480px | Mobile | Single column, touch-friendly sizes |
-
-Setiap breakpoint memiliki optimized:
-- Font sizes (responsive typography)
-- Padding dan spacing
-- Icon sizes
-- Grid layouts (2-column → 1-column)
-- Button sizes
-
-## 🚀 Development Workflow
-
-### Development Mode
 ```bash
 npm run dev
 ```
-Membuka development server dengan HMR untuk real-time updates.
 
-### Production Build
+4. Build untuk production
+
 ```bash
 npm run build
 ```
-Menghasilkan optimized build files di folder `dist/`.
 
-### Preview Build
+5. Preview hasil build
+
 ```bash
 npm run preview
 ```
+
+## Susunan Proyek
+
+```text
+my-project/
+|-- public/
+|   `-- videos/
+|-- src/
+|   |-- assets/
+|   |   |-- images/
+|   |   `-- main.css
+|   |-- components/
+|   |   |-- base/
+|   |   |-- common/
+|   |   |-- layouts/
+|   |   `-- sections/
+|   |-- router/
+|   |   `-- index.js
+|   |-- views/
+|   |   |-- HomeView.vue
+|   |   |-- AboutView.vue
+|   |   |-- ServicesView.vue
+|   |   |-- ProductsView.vue
+|   |   `-- ContactView.vue
+|   |-- App.vue
+|   |-- main.js
+|   `-- style.css
+|-- index.html
+|-- package.json
+|-- vite.config.js
+|-- tailwind.config.js
+`-- postcss.config.js
+```
+
+## Contoh Penggunaan
+
+### 1) Menjalankan aplikasi secara lokal
+
+```bash
+npm run dev
+```
+
+Setelah server berjalan, buka alamat lokal yang ditampilkan terminal (umumnya http://localhost:5173).
+
+### 2) Menambahkan section baru ke halaman
+
+1. Buat komponen section baru di folder `src/components/sections`.
+2. Import section tersebut ke view yang dibutuhkan (misalnya HomeView).
+3. Susun urutan section sesuai alur konten halaman.
+
+Contoh:
+
+```vue
+<script setup>
+import NewSection from '@/components/sections/NewSection.vue'
+</script>
+
+<template>
+  <main>
+    <NewSection />
+  </main>
+</template>
+```
+
+### 3) Build dan deploy
+
+```bash
+npm run build
+```
+
+Hasil build akan tersedia di folder `dist` dan siap dideploy ke static hosting.
+
+### 4) Validasi sebelum rilis internal
+
+```bash
+npm run build
+```
+
+Checklist minimum sebelum merge/deploy:
+- Build berhasil tanpa error.
+- Navigasi utama dan section penting berfungsi di desktop dan mobile.
+- Tidak ada data/konten sensitif perusahaan yang terekspos.
+- Perubahan konten sudah disetujui PIC terkait.
+
+## Kontribusi
+
+Kontribusi mengikuti alur kerja yang lebih ketat untuk menjaga kualitas dan kepatuhan perusahaan:
+
+1. Fork repository ini.
+2. Buat branch fitur baru (`feature/nama-fitur`).
+3. Lakukan perubahan sesuai scope yang disetujui.
+4. Commit dengan pesan yang jelas dan terstruktur.
+5. Push branch ke repository fork/internal.
+6. Buat Pull Request ke branch utama.
+7. Tunggu review teknis dan approval stakeholder/PIC terkait.
+
+Saran sebelum membuat Pull Request:
+- Jalankan aplikasi di mode development.
+- Pastikan build berhasil tanpa error.
+- Pastikan perubahan tidak merusak tampilan responsif.
+- Pastikan tidak ada data sensitif atau aset tanpa izin yang ikut ter-commit.
+- Sertakan ringkasan perubahan dan dampak bisnis singkat pada deskripsi PR.
+
+## Lisensi
+
+Proyek ini menggunakan lisensi MIT.
+
+Silakan gunakan, modifikasi, dan distribusikan proyek ini sesuai ketentuan lisensi MIT.
+
+Catatan: lisensi MIT berlaku untuk source code proyek. Aset merek perusahaan (nama dagang, logo, foto tertentu, materi sertifikasi, dan konten identitas perusahaan) dapat memiliki pembatasan penggunaan terpisah sesuai kebijakan PT. Duta Katup Mas.
