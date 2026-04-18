@@ -54,11 +54,12 @@ const backgroundImage = ref(workshopImage)
 }
 
 .hero-text {
-  font-size: clamp(1.125rem, 5vw, 3rem);
+  font-size: clamp(1.35rem, 4.8vw, 3rem);
   line-height: 1.4;
   margin-bottom: 3rem;
   opacity: 0.95;
   font-weight: 700;
+  font-style: italic;
 }
 
 @media (max-width: 768px) {
@@ -81,7 +82,8 @@ const backgroundImage = ref(workshopImage)
   }
 
   .hero-text {
-    font-size: 1.125rem;
+    font-size: clamp(1.25rem, 5.6vw, 1.6rem);
+    line-height: 1.45;
     margin-bottom: 1.5rem;
   }
 }
