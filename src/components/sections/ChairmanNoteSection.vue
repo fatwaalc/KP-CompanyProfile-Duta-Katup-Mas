@@ -21,8 +21,7 @@
 
           <!-- Signature -->
           <div class="flex flex-col gap-1 animate-slide-in-left" style="animation-delay: 0.6s">
-            <p class="text-lg sm:text-xl font-bold text-dkm-dark m-0">Juwanta Yeonardy</p>
-            <p class="text-sm sm:text-base text-gray-600 m-0">Chairman PT. Duta Katup Mas</p>
+            <p class="text-lg sm:text-xl font-bold text-dkm-dark m-0">Chairman PT. Duta Katup Mas</p>
           </div>
         </div>
       </div>
