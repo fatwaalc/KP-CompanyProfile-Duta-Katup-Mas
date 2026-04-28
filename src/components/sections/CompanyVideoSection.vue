@@ -19,7 +19,7 @@
           @play="isPlaying = true"
           @pause="isPlaying = false"
         >
-          <source src="/videos/company-profile.mp4" type="video/mp4">
+          <source src="/videos/Video Company Profile.mp4" type="video/mp4">
           {{ t('home.video.unsupported') }}
         </video>
 
