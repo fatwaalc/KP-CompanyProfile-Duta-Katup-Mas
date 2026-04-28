@@ -7,10 +7,8 @@
             @click="navigateTo('/')"
             class="inline-flex flex-col items-start gap-2 no-underline text-inherit cursor-pointer transition-all duration-300 w-fit"
           >
-            <img src="@/assets/images/logo-dkm.jpg" alt="Logo" class="w-12 h-12 object-contain rounded-lg shrink-0" />
-            <h3 class="text-2xl font-semibold text-white/95 m-0 hover:text-dkm-crimson">PT. Duta Katup Mas</h3>
+            <img src="@/assets/images/logofull-dkm.png" alt="PT. Duta Katup Mas" class="w-100 h-auto object-contain shrink-0" />
           </button>
-          <p class="text-[13.5px] font-medium tracking-normal uppercase leading-tight text-white/75 m-0 whitespace-nowrap">VALVE REPAIR &amp; MAINTENANCE SERVICE</p>
           <p class="text-base m-0 mt-1 text-white/70">Jl. Mulawarman No.01, RT.28, Balikpapan - Batakan 76116, Kalimantan Timur, Indonesia. </p>
           <p class="text-base m-0 text-white/70">(0542) 772011 / 772012 / 772013</p>
           <a href="mailto:admin@dutakatupmas.co.id" class="email-link text-base m-0 text-white/70 transition-colors duration-200 w-fit">admin@dutakatupmas.co.id</a>
