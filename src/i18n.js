@@ -212,7 +212,7 @@ const translations = {
     'footer.link.products.visit': 'Visit E-Commerce',
     'footer.link.products.facilities': 'Our Facilities',
     'footer.link.products.equipment': 'Our Equipment',
-    'footer.copyright': '(c) 2026 PT. Duta Katup Mas. All rights reserved.',
+    'footer.copyright': '© Copyright 2026 PT. Duta Katup Mas. All rights reserved.',
     'common.logo.alt': 'PT. Duta Katup Mas',
     'about.facility.alt': 'PT. Duta Katup Mas Facility',
     'about.chairman.alt': 'Ir. Hadi Suryanto - Chairman & Founder'
@@ -414,7 +414,7 @@ const translations = {
     'footer.link.products.visit': 'Kunjungi E-Commerce',
     'footer.link.products.facilities': 'Fasilitas Kami',
     'footer.link.products.equipment': 'Peralatan Kami',
-    'footer.copyright': '(c) 2026 PT. Duta Katup Mas. Hak cipta dilindungi.',
+    'footer.copyright': '© Copyright 2026 PT. Duta Katup Mas. Hak cipta dilindungi.',
     'common.logo.alt': 'PT. Duta Katup Mas',
     'about.facility.alt': 'Fasilitas PT. Duta Katup Mas',
     'about.chairman.alt': 'Ir. Hadi Suryanto - Ketua & Pendiri'
