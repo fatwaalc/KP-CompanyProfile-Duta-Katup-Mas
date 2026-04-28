@@ -197,7 +197,7 @@ const toggleDropdownOnMobile = (dropdown) => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 2rem;
+  padding: 0.4rem 2rem;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -219,7 +219,8 @@ const toggleDropdownOnMobile = (dropdown) => {
 }
 
 .logo {
-  height: 50px;
+  height: 72px;
+  max-width: 220px;
   object-fit: contain;
 }
 
@@ -430,7 +431,7 @@ const toggleDropdownOnMobile = (dropdown) => {
 /* Mobile Responsive */
 @media (max-width: 1024px) {
   .navbar-container {
-    padding: 0.75rem 1.5rem;
+    padding: 0.4rem 1.5rem;
   }
 
   .nav-link {
@@ -440,8 +441,13 @@ const toggleDropdownOnMobile = (dropdown) => {
 }
 
 @media (max-width: 768px) {
+  .logo {
+    height: 60px;
+    max-width: 200px;
+  }
+
   .navbar-container {
-    padding: 0.75rem 1rem;
+    padding: 0.4rem 1rem;
   }
 
   .hamburger {
