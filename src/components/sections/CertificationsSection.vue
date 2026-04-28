@@ -6,40 +6,29 @@
         <div class="w-full">
           <!-- Label -->
           <span class="inline-block text-dkm-crimson text-xs sm:text-sm font-bold tracking-widest uppercase mb-3 sm:mb-4 pb-2 sm:pb-3 border-b-2 border-dkm-crimson animate-slide-in-left">
-            QUALITY ASSURANCE
+            {{ t('about.certifications.label') }}
           </span>
 
           <!-- Title -->
           <h2 class="text-3xl sm:text-4xl lg:text-4xl xl:text-3xl font-bold text-dkm-dark mb-3 sm:mb-4 leading-tight animate-slide-in-left" style="animation-delay: 0.2s">
-            Certifications
+            {{ t('about.certifications.title') }}
           </h2>
 
           <!-- Description -->
           <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-6 sm:mb-8 animate-slide-in-left" style="animation-delay: 0.4s">
-            Our commitment to quality is validated by internationally recognized certifications.
+            {{ t('about.certifications.description') }}
           </p>
 
           <!-- Certifications List -->
           <ul class="flex flex-col gap-3 sm:gap-4 list-none p-0 m-0">
-            <li class="flex items-start gap-2.5 sm:gap-3 text-sm sm:text-base text-gray-800 leading-relaxed animate-slide-in-left" style="animation-delay: 0.2s">
+            <li
+              v-for="(item, index) in certificationItems"
+              :key="item"
+              class="flex items-start gap-2.5 sm:gap-3 text-sm sm:text-base text-gray-800 leading-relaxed animate-slide-in-left"
+              :style="{ animationDelay: `${0.2 + index * 0.1}s` }"
+            >
               <FileCheck class="w-5 h-5 text-dkm-crimson shrink-0 mt-0.5" />
-              <span>ISO 9001:2015 – Quality Management System</span>
-            </li>
-            <li class="flex items-start gap-2.5 sm:gap-3 text-sm sm:text-base text-gray-800 leading-relaxed animate-slide-in-left" style="animation-delay: 0.3s">
-              <FileCheck class="w-5 h-5 text-dkm-crimson shrink-0 mt-0.5" />
-              <span>ISO 14001:2015 – Environmental Management System</span>
-            </li>
-            <li class="flex items-start gap-2.5 sm:gap-3 text-sm sm:text-base text-gray-800 leading-relaxed animate-slide-in-left" style="animation-delay: 0.4s">
-              <FileCheck class="w-5 h-5 text-dkm-crimson shrink-0 mt-0.5" />
-              <span>ISO 45001:2018 – Occupational Health & Safety</span>
-            </li>
-            <li class="flex items-start gap-2.5 sm:gap-3 text-sm sm:text-base text-gray-800 leading-relaxed animate-slide-in-left" style="animation-delay: 0.5s">
-              <FileCheck class="w-5 h-5 text-dkm-crimson shrink-0 mt-0.5" />
-              <span>API 6D – Specification for Pipeline and Piping Valves</span>
-            </li>
-            <li class="flex items-start gap-2.5 sm:gap-3 text-sm sm:text-base text-gray-800 leading-relaxed animate-slide-in-left" style="animation-delay: 0.6s">
-              <FileCheck class="w-5 h-5 text-dkm-crimson shrink-0 mt-0.5" />
-              <span>ASME Certified Workshop</span>
+              <span>{{ item }}</span>
             </li>
           </ul>
         </div>
@@ -71,30 +60,39 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
 import { FileCheck } from 'lucide-vue-next'
 import CarouselNavigation from '@/components/base/CarouselNavigation.vue'
 import sertif1 from '@/assets/images/sertif1.png'
 import sertif2 from '@/assets/images/sertif2.png'
+import { t } from '@/i18n'
 
 // Carousel images data
-const certImages = ref([
+const certImages = computed(() => [
   {
     image: sertif1,
-    alt: 'ISO 9001:2015 Certification'
+    alt: t('about.certifications.alt1')
   },
   {
     image: sertif2,
-    alt: 'ISO 14001:2015 Certification'
+    alt: t('about.certifications.alt2')
   },
   {
     image: sertif1,
-    alt: 'API 6D Certification'
+    alt: t('about.certifications.alt3')
   },
   {
     image: sertif2,
-    alt: 'ASME Certified Workshop'
+    alt: t('about.certifications.alt4')
   }
+])
+
+const certificationItems = computed(() => [
+  t('about.certifications.item1'),
+  t('about.certifications.item2'),
+  t('about.certifications.item3'),
+  t('about.certifications.item4'),
+  t('about.certifications.item5')
 ])
 
 const currentCertSlide = ref(0)

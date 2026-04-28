@@ -2,23 +2,27 @@
   <button
     @click="emit('click')"
     class="inline-flex items-center gap-2 px-4 py-2 bg-dkm-crimson text-white font-semibold text-sm rounded-md border border-dkm-crimson cursor-pointer transition-all duration-200"
-    :title="label"
+    :title="labelText"
     type="button"
   >
-    <span>{{ label }}</span>
+    <span>{{ labelText }}</span>
     <Send class="w-4 h-4" />
   </button>
 </template>
 
 <script setup>
 import { Send } from 'lucide-vue-next'
+import { t } from '@/i18n'
+import { computed } from 'vue'
 
-defineProps({
+const props = defineProps({
   label: {
     type: String,
-    default: 'Get In Touch'
+    default: ''
   }
 })
+
+const labelText = computed(() => props.label || t('cta.getInTouch'))
 
 const emit = defineEmits(['click'])
 </script>

@@ -6,8 +6,8 @@
     <div class="max-w-6xl mx-auto relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-15 md:mb-10">
-        <span class="inline-block text-dkm-crimson text-sm font-bold tracking-widest uppercase mb-2 pb-2 border-b-2 border-dkm-crimson">OUR NETWORK</span>
-        <h2 class="text-4xl lg:text-3xl md:text-2xl font-bold text-dkm-dark m-0 drop-shadow-lg">Our Group</h2>
+        <span class="inline-block text-dkm-crimson text-sm font-bold tracking-widest uppercase mb-2 pb-2 border-b-2 border-dkm-crimson">{{ t('home.group.label') }}</span>
+        <h2 class="text-4xl lg:text-3xl md:text-2xl font-bold text-dkm-dark m-0 drop-shadow-lg">{{ t('home.group.title') }}</h2>
       </div>
 
       <!-- Group Marquee -->
@@ -23,6 +23,7 @@ import logoDias from '@/assets/images/logodias.png'
 import logoDet from '@/assets/images/logodet.png'
 import logoDikip from '@/assets/images/logodikip.png'
 import logoRomas from '@/assets/images/logoromas.png'
+import { t } from '@/i18n'
 
 const companies = ref([
   { name: 'PT. Duta Instrumentasi Solusi', logo: logoDias },

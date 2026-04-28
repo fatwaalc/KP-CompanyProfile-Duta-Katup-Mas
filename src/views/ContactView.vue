@@ -3,9 +3,9 @@
     <!-- Contact Hero Section -->
     <section class="contact-hero">
       <div class="hero-content">
-        <span class="hero-label">GET IN TOUCH</span>
-        <h1 class="hero-title">Contact Us</h1>
-        <p class="hero-subtitle">Find our contact information, business hours, and office location. Reach out to us through phone, email, or visit our facility.</p>
+        <span class="hero-label">{{ t('contact.hero.label') }}</span>
+        <h1 class="hero-title">{{ t('contact.hero.title') }}</h1>
+        <p class="hero-subtitle">{{ t('contact.hero.subtitle') }}</p>
       </div>
     </section>
 
@@ -19,11 +19,11 @@
             <div class="info-icon">
               <MapPin :size="32" />
             </div>
-            <h3 class="info-title">Address</h3>
+            <h3 class="info-title">{{ t('contact.info.address') }}</h3>
             <p class="info-text">
-              Jl. Mulawarman No.01, RT.28,<br>
-              Batakan - Balikpapan 76116.<br>
-              Kalimantan Timur, Indonesia
+              {{ t('contact.address.line1') }}<br>
+              {{ t('contact.address.line2') }}<br>
+              {{ t('contact.address.line3') }}
             </p>
           </div>
 
@@ -32,7 +32,7 @@
             <div class="info-icon">
               <Phone :size="32" />
             </div>
-            <h3 class="info-title">Phone</h3>
+            <h3 class="info-title">{{ t('contact.info.phone') }}</h3>
             <p class="info-text">
               (0542) <br>
               772011 / 772012 / 772013
@@ -44,7 +44,7 @@
             <div class="info-icon">
               <Mail :size="32" />
             </div>
-            <h3 class="info-title">Email</h3>
+            <h3 class="info-title">{{ t('contact.info.email') }}</h3>
             <p class="info-text">
               <a href="mailto:admin@dutakatupmas.co.id">admin@dutakatupmas.co.id</a>
             </p>
@@ -55,10 +55,10 @@
             <div class="info-icon">
               <ClockCheck :size="32" />
             </div>
-            <h3 class="info-title">Business Hours</h3>
+            <h3 class="info-title">{{ t('contact.info.hours') }}</h3>
             <p class="info-text">
-              Mon - Fri: 08:00 - 17:00<br>
-              Sat - Sun: Closed
+              {{ t('contact.hours.weekdays') }}<br>
+              {{ t('contact.hours.weekends') }}
             </p>
           </div>
         </div>
@@ -73,6 +73,7 @@
 <script setup>
 import LocationSection from '@/components/sections/LocationSection.vue'
 import { MapPin, Phone, Mail, ClockCheck } from 'lucide-vue-next'
+import { t } from '@/i18n'
 </script>
 
 <style scoped>

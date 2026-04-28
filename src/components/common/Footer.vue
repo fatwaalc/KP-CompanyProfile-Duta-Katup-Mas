@@ -7,54 +7,54 @@
             @click="navigateTo('/')"
             class="inline-flex flex-col items-start gap-2 no-underline text-inherit cursor-pointer transition-all duration-300 w-fit"
           >
-            <img src="@/assets/images/logofull-dkm.png" alt="PT. Duta Katup Mas" class="w-100 h-auto object-contain shrink-0" />
+            <img src="@/assets/images/logofull-dkm.png" :alt="t('common.logo.alt')" class="w-100 h-auto object-contain shrink-0" />
           </button>
-          <p class="text-base m-0 mt-1 text-white/70">Jl. Mulawarman No.01, RT.28, Balikpapan - Batakan 76116, Kalimantan Timur, Indonesia. </p>
-          <p class="text-base m-0 text-white/70">(0542) 772011 / 772012 / 772013</p>
+          <p class="text-base m-0 mt-1 text-white/70">{{ t('footer.address') }}</p>
+          <p class="text-base m-0 text-white/70">{{ t('footer.phone') }}</p>
           <a href="mailto:admin@dutakatupmas.co.id" class="email-link text-base m-0 text-white/70 transition-colors duration-200 w-fit">admin@dutakatupmas.co.id</a>
           <GetInTouchButton class="w-fit mt-2" @click="navigateTo('/contact')" />
         </div>
 
         <div class="flex flex-col">
-          <h4 class="text-sm font-bold text-white m-0 mb-4">Home</h4>
+          <h4 class="text-sm font-bold text-white m-0 mb-4">{{ t('footer.section.home') }}</h4>
           <ul class="list-none p-0 m-0 flex flex-col gap-2.5">
-            <li><button @click="navigateTo('/', '#services-hero')" class="footer-link">Our Services</button></li>
-            <li><button @click="navigateTo('/', '#about-section')" class="footer-link">Mini About DKM</button></li>
-            <li><button @click="navigateTo('/', '#clients-section')" class="footer-link">Our Clients</button></li>
-            <li><button @click="navigateTo('/', '#testimonials-section')" class="footer-link">Testimonials</button></li>
-            <li><button @click="navigateTo('/', '#our-group-section')" class="footer-link">Our Group</button></li>
-            <li><button @click="navigateTo('/', '#video-section')" class="footer-link">Company Video Profile</button></li>
+            <li><button @click="navigateTo('/', '#services-hero')" class="footer-link">{{ t('footer.link.services') }}</button></li>
+            <li><button @click="navigateTo('/', '#about-section')" class="footer-link">{{ t('footer.link.miniAbout') }}</button></li>
+            <li><button @click="navigateTo('/', '#clients-section')" class="footer-link">{{ t('footer.link.clients') }}</button></li>
+            <li><button @click="navigateTo('/', '#testimonials-section')" class="footer-link">{{ t('footer.link.testimonials') }}</button></li>
+            <li><button @click="navigateTo('/', '#our-group-section')" class="footer-link">{{ t('footer.link.group') }}</button></li>
+            <li><button @click="navigateTo('/', '#video-section')" class="footer-link">{{ t('footer.link.video') }}</button></li>
           </ul>
         </div>
 
         <div class="flex flex-col">
-          <h4 class="text-sm font-bold text-white m-0 mb-4">About Us</h4>
+          <h4 class="text-sm font-bold text-white m-0 mb-4">{{ t('footer.section.about') }}</h4>
           <ul class="list-none p-0 m-0 flex flex-col gap-2.5">
-            <li><button @click="navigateTo('/about', '#who-we-are')" class="footer-link">Who We Are</button></li>
-            <li><button @click="navigateTo('/about', '#vision-mission')" class="footer-link">Vision &amp; Mission</button></li>
-            <li><button @click="navigateTo('/about', '#chairman-note')" class="footer-link">Chairman's Note</button></li>
-            <li><button @click="navigateTo('/about', '#our-team')" class="footer-link">Our Team</button></li>
-            <li><button @click="navigateTo('/about', '#certifications')" class="footer-link">Certifications</button></li>
+            <li><button @click="navigateTo('/about', '#who-we-are')" class="footer-link">{{ t('footer.link.about.who') }}</button></li>
+            <li><button @click="navigateTo('/about', '#vision-mission')" class="footer-link">{{ t('footer.link.about.vision') }}</button></li>
+            <li><button @click="navigateTo('/about', '#chairman-note')" class="footer-link">{{ t('footer.link.about.chairman') }}</button></li>
+            <li><button @click="navigateTo('/about', '#our-team')" class="footer-link">{{ t('footer.link.about.team') }}</button></li>
+            <li><button @click="navigateTo('/about', '#certifications')" class="footer-link">{{ t('footer.link.about.cert') }}</button></li>
           </ul>
         </div>
 
         <div class="flex flex-col">
-          <h4 class="text-sm font-bold text-white m-0 mb-4">Services</h4>
+          <h4 class="text-sm font-bold text-white m-0 mb-4">{{ t('footer.section.services') }}</h4>
           <ul class="list-none p-0 m-0 flex flex-col gap-2.5">
-            <li><button @click="navigateTo('/services', '#service-1')" class="footer-link">Valve Repair</button></li>
-            <li><button @click="navigateTo('/services', '#service-2')" class="footer-link">Actuator Maintenance</button></li>
-            <li><button @click="navigateTo('/services', '#service-3')" class="footer-link">Flame Arresters</button></li>
-            <li><button @click="navigateTo('/services', '#service-4')" class="footer-link">PSV Maintenance</button></li>
-            <li><button @click="navigateTo('/services', '#service-5')" class="footer-link">Instrumentation</button></li>
+            <li><button @click="navigateTo('/services', '#service-1')" class="footer-link">{{ t('footer.link.services.valve') }}</button></li>
+            <li><button @click="navigateTo('/services', '#service-2')" class="footer-link">{{ t('footer.link.services.actuator') }}</button></li>
+            <li><button @click="navigateTo('/services', '#service-3')" class="footer-link">{{ t('footer.link.services.flame') }}</button></li>
+            <li><button @click="navigateTo('/services', '#service-4')" class="footer-link">{{ t('footer.link.services.psv') }}</button></li>
+            <li><button @click="navigateTo('/services', '#service-5')" class="footer-link">{{ t('footer.link.services.instrumentation') }}</button></li>
           </ul>
         </div>
 
         <div class="flex flex-col">
-          <h4 class="text-sm font-bold text-white m-0 mb-4">Products &amp; Facilities</h4>
+          <h4 class="text-sm font-bold text-white m-0 mb-4">{{ t('footer.section.products') }}</h4>
           <ul class="list-none p-0 m-0 flex flex-col gap-2.5">
-            <li><button @click="navigateTo('/products', '#product-1')" class="footer-link">Visit E-Commerce</button></li>
-            <li><button @click="navigateTo('/products', '#product-3')" class="footer-link">Our Facilities</button></li>
-            <li><button @click="navigateTo('/products', '#product-4')" class="footer-link">Our Equipment</button></li>
+            <li><button @click="navigateTo('/products', '#product-1')" class="footer-link">{{ t('footer.link.products.visit') }}</button></li>
+            <li><button @click="navigateTo('/products', '#product-3')" class="footer-link">{{ t('footer.link.products.facilities') }}</button></li>
+            <li><button @click="navigateTo('/products', '#product-4')" class="footer-link">{{ t('footer.link.products.equipment') }}</button></li>
           </ul>
         </div>
       </div>
@@ -62,7 +62,7 @@
       <div class="h-px bg-linear-to-r from-transparent via-white/15 to-transparent my-8"></div>
 
       <div class="flex justify-center items-center">
-        <p class="text-xs text-white/50 m-0 text-center">&copy; 2026 PT. Duta Katup Mas. All rights reserved.</p>
+        <p class="text-xs text-white/50 m-0 text-center">{{ t('footer.copyright') }}</p>
       </div>
     </div>
   </footer>
@@ -71,6 +71,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import GetInTouchButton from '@/components/base/GetInTouchButton.vue'
+import { t } from '@/i18n'
 
 const router = useRouter()
 

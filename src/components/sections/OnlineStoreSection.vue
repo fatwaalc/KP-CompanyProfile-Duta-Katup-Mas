@@ -3,12 +3,10 @@
     <div class="os-container">
       <div class="os-card" :style="{ backgroundImage: `url(${BackgroundCardStore})` }">
         <!-- Title -->
-        <h2 class="os-title">Shop Our Products Online</h2>
+        <h2 class="os-title">{{ t('products.store.title') }}</h2>
 
         <!-- Description -->
-        <p class="os-description">
-          Browse our catalogue of valves, spare parts, and accessories on <strong>PaDi UMKM</strong> website platform.
-        </p>
+        <p class="os-description" v-html="t('products.store.desc')"></p>
 
         <!-- CTA Button -->
         <a 
@@ -17,7 +15,7 @@
           rel="noopener noreferrer"
           class="visit-store-btn"
         >
-          Visit E-Commerce
+          {{ t('cta.visitEcommerce') }}
           <ShoppingCart :size="20" />
         </a>
       </div>
@@ -28,6 +26,7 @@
 <script setup>
 import { ShoppingCart } from 'lucide-vue-next'
 import BackgroundCardStore from '@/assets/images/BackgroundCardStore.png'
+import { t } from '@/i18n'
 // Online Store Section Component
 </script>
 

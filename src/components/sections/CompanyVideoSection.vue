@@ -4,10 +4,10 @@
       <!-- Header -->
       <div class="text-center mb-12">
         <span class="inline-block text-dkm-crimson text-sm font-bold tracking-widest uppercase mb-2 pb-2 border-b-2 border-dkm-crimson">
-          WATCH OUR STORY
+          {{ t('home.video.label') }}
         </span>
         <h2 class="text-4xl lg:text-3xl md:text-2xl font-bold text-dkm-dark m-0">
-          Company Video Profile
+          {{ t('home.video.title') }}
         </h2>
       </div>
 
@@ -20,7 +20,7 @@
           @pause="isPlaying = false"
         >
           <source src="/videos/company-profile.mp4" type="video/mp4">
-          Your browser does not support the video tag.
+          {{ t('home.video.unsupported') }}
         </video>
 
         <!-- Play Button Overlay -->
@@ -28,7 +28,7 @@
           v-if="!isPlaying"
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-dkm-crimson/90 hover:bg-dkm-crimson border-none rounded-full cursor-pointer flex items-center justify-center z-10 transition-all duration-300 hover:scale-110 hover:shadow-lg backdrop-blur-sm"
           @click="playVideo"
-          aria-label="Play video"
+          :aria-label="t('home.video.playVideo')"
         >
           <Play class="w-10 h-10 text-white stroke-2.5 ml-1" />
         </button>
@@ -39,8 +39,8 @@
             <button 
               class="bg-white/20 hover:bg-dkm-crimson/80 text-white border border-white/30 w-10 h-10 rounded-full cursor-pointer flex items-center justify-center transition-all duration-200"
               @click="togglePlayPause"
-              :title="isPlaying ? 'Pause' : 'Play'"
-              aria-label="Toggle play/pause"
+              :title="isPlaying ? t('home.video.pause') : t('home.video.play')"
+              :aria-label="isPlaying ? t('home.video.pause') : t('home.video.play')"
             >
               <Pause v-if="isPlaying" class="w-5 h-5 stroke-2.5" />
               <Play v-else class="w-5 h-5 stroke-2.5" />
@@ -49,8 +49,8 @@
             <button 
               class="bg-white/20 hover:bg-dkm-crimson/80 text-white border border-white/30 w-10 h-10 rounded-full cursor-pointer flex items-center justify-center transition-all duration-200"
               @click="toggleMute"
-              :title="isMuted ? 'Unmute' : 'Mute'"
-              aria-label="Toggle mute"
+              :title="isMuted ? t('home.video.unmute') : t('home.video.mute')"
+              :aria-label="isMuted ? t('home.video.unmute') : t('home.video.mute')"
             >
               <Volume2 v-if="!isMuted" class="w-5 h-5 stroke-2.5" />
               <VolumeOff v-else class="w-5 h-5 stroke-2.5" />
@@ -60,8 +60,8 @@
           <button 
             class="bg-white/20 hover:bg-dkm-crimson/80 text-white border border-white/30 w-10 h-10 rounded-full cursor-pointer flex items-center justify-center transition-all duration-200 text-lg ml-auto"
             @click="goFullscreen"
-            title="Fullscreen"
-            aria-label="Toggle fullscreen"
+            :title="t('home.video.fullscreen')"
+            :aria-label="t('home.video.fullscreen')"
           >
             ⛶
           </button>
@@ -74,6 +74,7 @@
 <script setup>
 import { ref } from 'vue'
 import { Play, Pause, Volume2, VolumeOff } from 'lucide-vue-next'
+import { t } from '@/i18n'
 
 const videoPlayer = ref(null)
 const isPlaying = ref(false)

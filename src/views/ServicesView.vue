@@ -6,15 +6,9 @@
     <div id="service-1">
       <ServiceDetailCard 
         :image="valveImage"
-        title="Repair Valve Various Size & Class"
-        description="Complete valve repair services for gate, globe, ball, butterfly, check, and plug valves in all sizes and pressure classes. Our workshop handles valves from 1/2&quot; to 60&quot; and pressure ratings up to 2500#."
-        :features="[
-          'Disassembly & Inspection',
-          'Lapping & Grinding',
-          'Hydrostatic & Pneumatic Testing',
-          'Welding Overlay Repair',
-          'Full Documentation & Certification'
-        ]"
+        :title="t('services.service1.title')"
+        :description="serviceDescriptions.service1"
+        :features="serviceFeatures.service1"
         backgroundColor="linear-gradient(135deg, #e8f0f7 0%, #d4e3f0 100%)"
       />
     </div>
@@ -22,30 +16,18 @@
     <div id="service-2">
       <ServiceDetailCard 
         :image="actuatorImage"
-        title="Actuator Maintenance & Repair"
-        description="Comprehensive actuator maintenance and repair services for pneumatic and hydraulic systems. We provide specialized care for rotary and linear actuators, ensuring optimal performance and extended equipment life."
-        :features="[
-          'Pneumatic Actuator Repair',
-          'Hydraulic Actuator Service',
-          'Seal & Bearing Replacement',
-          'Performance Testing',
-          'Spare Parts & Inventory Management'
-        ]"
+        :title="t('services.service2.title')"
+        :description="serviceDescriptions.service2"
+        :features="serviceFeatures.service2"
       />
     </div>
 
     <div id="service-3">
       <ServiceDetailCard 
         :image="flameareImage"
-        title="Flame Arresters Installation & Maintenance"
-        description="Expert installation and maintenance services for flame arresters in oil and gas pipelines. Our team ensures complete safety compliance and reliable flame protection for your systems."
-        :features="[
-          'Installation & Alignment',
-          'Pressure Relief Valve Service',
-          'System Inspection',
-          'Maintenance & Recertification',
-          'Safety Certification & Documentation'
-        ]"
+        :title="t('services.service3.title')"
+        :description="serviceDescriptions.service3"
+        :features="serviceFeatures.service3"
         backgroundColor="linear-gradient(135deg, #e8f0f7 0%, #d4e3f0 100%)"
       />
     </div>
@@ -53,30 +35,18 @@
     <div id="service-4">
       <ServiceDetailCard 
         :image="psvImage"
-        title="PSV Maintenance & Calibration"
-        description="Pressure Safety Valve maintenance, calibration, and repair services to ensure optimal protection. We provide accurate testing and certification to keep your systems safe and compliant."
-        :features="[
-          'PSV Removal & Installation',
-          'Precision Calibration',
-          'Valve Cleaning & Service',
-          'Hydrostatic Test Certification',
-          'Complete Documentation & Reporting'
-        ]"
+        :title="t('services.service4.title')"
+        :description="serviceDescriptions.service4"
+        :features="serviceFeatures.service4"
       />
     </div>
 
     <div id="service-5">
       <ServiceDetailCard 
         :image="instrumentImage"
-        title="Valve Instrumentation & Automation"
-        description="Advanced instrumentation solutions for valve control and monitoring. We integrate automation systems to optimize your valve operations and provide real-time data analytics."
-        :features="[
-          'Instrument Installation',
-          'Valve Positioner Setup',
-          'Flow & Pressure Monitoring',
-          'SCADA System Integration',
-          'Technical Support & Training'
-        ]"
+        :title="t('services.service5.title')"
+        :description="serviceDescriptions.service5"
+        :features="serviceFeatures.service5"
         backgroundColor="linear-gradient(135deg, #e8f0f7 0%, #d4e3f0 100%)"
       />
     </div>
@@ -84,6 +54,7 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import ServicesHeroSection from '@/components/sections/ServicesHeroSection.vue'
 import ServiceDetailCard from '@/components/sections/ServiceDetailCard.vue'
 import valveImage from '@/assets/images/valvefake.jpg'
@@ -91,6 +62,53 @@ import actuatorImage from '@/assets/images/actuatorfake.jpg'
 import flameareImage from '@/assets/images/flamearesfake.jpg'
 import psvImage from '@/assets/images/psvfake.jpg'
 import instrumentImage from '@/assets/images/instrumentservicefake.jpg'
+import { t } from '@/i18n'
+
+const serviceDescriptions = computed(() => ({
+  service1: t('services.service1.desc'),
+  service2: t('services.service2.desc'),
+  service3: t('services.service3.desc'),
+  service4: t('services.service4.desc'),
+  service5: t('services.service5.desc')
+}))
+
+const serviceFeatures = computed(() => ({
+  service1: [
+    t('services.service1.feature1'),
+    t('services.service1.feature2'),
+    t('services.service1.feature3'),
+    t('services.service1.feature4'),
+    t('services.service1.feature5')
+  ],
+  service2: [
+    t('services.service2.feature1'),
+    t('services.service2.feature2'),
+    t('services.service2.feature3'),
+    t('services.service2.feature4'),
+    t('services.service2.feature5')
+  ],
+  service3: [
+    t('services.service3.feature1'),
+    t('services.service3.feature2'),
+    t('services.service3.feature3'),
+    t('services.service3.feature4'),
+    t('services.service3.feature5')
+  ],
+  service4: [
+    t('services.service4.feature1'),
+    t('services.service4.feature2'),
+    t('services.service4.feature3'),
+    t('services.service4.feature4'),
+    t('services.service4.feature5')
+  ],
+  service5: [
+    t('services.service5.feature1'),
+    t('services.service5.feature2'),
+    t('services.service5.feature3'),
+    t('services.service5.feature4'),
+    t('services.service5.feature5')
+  ]
+}))
 </script>
 
 <style scoped>

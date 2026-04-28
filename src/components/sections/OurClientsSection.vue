@@ -5,10 +5,10 @@
       <!-- Section Header -->
       <div class="text-center mb-12">
         <span class="inline-block text-dkm-crimson text-sm font-bold tracking-widest uppercase mb-2 pb-2 border-b-2 border-dkm-crimson">
-          TRUSTED BY INDUSTRY LEADERS
+          {{ t('home.clients.label') }}
         </span>
         <h2 class="text-4xl lg:text-3xl md:text-2xl font-bold text-dkm-dark m-0">
-          Our Clients
+          {{ t('home.clients.title') }}
         </h2>
       </div>
 
@@ -28,6 +28,7 @@ import logoHaliburton from '@/assets/images/logohaliburton.png'
 import logoPertamina from '@/assets/images/logopertamina.png'
 import logoPupuk from '@/assets/images/logopupuk.png'
 import logoRdmp from '@/assets/images/logordmp.png'
+import { t } from '@/i18n'
 
 const clients = ref([
   { name: 'Badak', logo: logoBadak },

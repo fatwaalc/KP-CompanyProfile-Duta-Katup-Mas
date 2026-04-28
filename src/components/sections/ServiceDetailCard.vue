@@ -34,7 +34,7 @@
 
         <!-- Contact Button -->
         <a href="javascript:void(0)" class="sd-contact-btn" @click="navigateToContact">
-          Contact Us
+          {{ t('cta.contact') }}
           <ChevronRight :size="20" class="sd-btn-arrow" />
         </a>
       </div>
@@ -47,6 +47,7 @@ import { defineProps } from 'vue'
 import { useRouter } from 'vue-router'
 import { nextTick } from 'vue'
 import { ChevronRight, ClipboardPen } from 'lucide-vue-next'
+import { t } from '@/i18n'
 
 const router = useRouter()
 

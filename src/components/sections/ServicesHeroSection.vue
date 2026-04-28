@@ -1,15 +1,15 @@
 <template>
   <section id="services-hero" class="services-hero">
     <div class="hero-content">
-      <span class="hero-label">Our Services</span>
-      <h1 class="hero-title">Our Services</h1>
-      <p class="hero-subtitle">Comprehensive valve repair and maintenance solutions backed by international certifications and decades of experience.</p>
+      <span class="hero-label">{{ t('services.hero.label') }}</span>
+      <h1 class="hero-title">{{ t('services.hero.title') }}</h1>
+      <p class="hero-subtitle">{{ t('services.hero.subtitle') }}</p>
     </div>
   </section>
 </template>
 
 <script setup>
-// Services Hero Section Component
+import { t } from '@/i18n'
 </script>
 
 <style scoped>

@@ -3,20 +3,20 @@
     <div class="max-w-6xl mx-auto">
       <!-- Header -->
       <div class="text-center mb-8 sm:mb-10 lg:mb-15">
-        <span class="inline-block text-dkm-crimson text-xs sm:text-sm font-bold tracking-widest uppercase mb-3 sm:mb-4 pb-2 sm:pb-3 border-b-2 border-dkm-crimson">OUR FACILITIES</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-4xl xl:text-4xl font-bold text-dkm-dark m-0">Workshop &amp; Office</h2>
+        <span class="inline-block text-dkm-crimson text-xs sm:text-sm font-bold tracking-widest uppercase mb-3 sm:mb-4 pb-2 sm:pb-3 border-b-2 border-dkm-crimson">{{ t('products.facilities.label') }}</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-4xl xl:text-4xl font-bold text-dkm-dark m-0">{{ t('products.facilities.title') }}</h2>
       </div>
 
       <!-- Facilities Grid -->
       <div class="facilities-grid gap-5 sm:gap-7 lg:gap-10">
         <FacilitiesCard 
-          title="Workshop"
+          :title="t('products.facilities.workshopTitle')"
           :images="workshopImages"
           :descriptions="workshopDescriptions"
           :is-workshop="true"
         />
         <FacilitiesCard
-          title="Office"
+          :title="t('products.facilities.officeTitle')"
           :images="officeImages"
           :descriptions="officeDescriptions"
           :is-workshop="false"
@@ -27,8 +27,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import FacilitiesCard from '@/components/base/FacilitiesCard.vue'
+import { t } from '@/i18n'
 
 // Workshop images
 const workshopImages = ref([
@@ -38,10 +39,10 @@ const workshopImages = ref([
 ])
 
 // Workshop descriptions
-const workshopDescriptions = ref([
-  'Workshop Area',
-  'Assembly Area',
-  'Blasting Area'
+const workshopDescriptions = computed(() => [
+  t('products.facilities.workshop1'),
+  t('products.facilities.workshop2'),
+  t('products.facilities.workshop3')
 ])
 
 // Office images
@@ -53,11 +54,11 @@ const officeImages = ref([
 ])
 
 // Office descriptions
-const officeDescriptions = ref([
-  'Meeting rooms equipped with modern conferencing systems for team collaboration, client presentations, and strategic planning sessions.',
-  'Office spaces designed for optimal productivity, housing engineering teams, project managers, and administrative staff with individual workstations.',
-  'Pantry area providing refreshment facilities, break spaces, and social areas for staff relaxation and informal team interactions.',
-  'Reception area serving as the first point of contact, providing professional greeting services and visitor management for all incoming clients and guests.'
+const officeDescriptions = computed(() => [
+  t('products.facilities.office1'),
+  t('products.facilities.office2'),
+  t('products.facilities.office3'),
+  t('products.facilities.office4')
 ])
 </script>
 

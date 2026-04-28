@@ -3,22 +3,23 @@
     @click="handleClick"
     class="learn-more-btn group inline-flex w-fit items-center gap-2 px-7 py-3 md:px-6 md:py-2 bg-dkm-dark text-white text-base font-semibold rounded cursor-pointer transition-all duration-300 ease-out border-2 border-dkm-dark hover:-translate-y-0.5"
   >
-    {{ label }}
+    {{ labelText }}
     <CircleArrowRight class="learn-more-arrow w-5 h-5 transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
   </button>
 </template>
 
 <script setup>
-import { nextTick } from 'vue'
+import { computed, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import { CircleArrowRight } from 'lucide-vue-next'
+import { t } from '@/i18n'
 
 const router = useRouter()
 
 const props = defineProps({
   label: {
     type: String,
-    default: 'Learn More'
+    default: ''
   },
   targetPage: {
     type: String,
@@ -29,6 +30,8 @@ const props = defineProps({
     default: 'who-we-are'
   }
 })
+
+const labelText = computed(() => props.label || t('cta.learnMore'))
 
 const handleClick = async () => {
   // Navigate to target page

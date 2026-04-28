@@ -6,7 +6,10 @@
     <!-- Hero Content -->
     <div class="hero-content">
       <p class="hero-text">
-        "Clients Satisfaction with <span class="font-bold text-white">Highest Products</span> and <span class="font-bold text-white">Services Integrity</span>"
+        "{{ t('home.hero.pre') }}
+        <span class="font-bold text-white">{{ t('home.hero.highlight1') }}</span>
+        {{ t('home.hero.mid') }}
+        <span class="font-bold text-white">{{ t('home.hero.highlight2') }}</span>"
       </p>
       
       <CTAButtonGroup />
@@ -18,6 +21,7 @@
 import { ref } from 'vue'
 import CTAButtonGroup from '@/components/base/CTAButtonGroup.vue'
 import workshopImage from '@/assets/images/workshopfake.jpg'
+import { t } from '@/i18n'
 
 // Background image dari assets
 const backgroundImage = ref(workshopImage)

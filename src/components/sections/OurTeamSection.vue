@@ -3,10 +3,10 @@
     <div class="max-w-3xl mx-auto">
       <!-- Header -->
       <div class="text-center mb-15">
-        <span class="inline-block text-dkm-crimson text-sm font-bold tracking-widest uppercase mb-4 pb-3 border-b-2 border-dkm-crimson animate-slide-in-up">OUR PEOPLE</span>
-        <h2 class="text-4xl lg:text-3xl md:text-2xl font-bold text-dkm-dark mb-4 animate-slide-in-up">Our Team</h2>
+        <span class="inline-block text-dkm-crimson text-sm font-bold tracking-widest uppercase mb-4 pb-3 border-b-2 border-dkm-crimson animate-slide-in-up">{{ t('about.team.label') }}</span>
+        <h2 class="text-4xl lg:text-3xl md:text-2xl font-bold text-dkm-dark mb-4 animate-slide-in-up">{{ t('about.team.title') }}</h2>
         <p class="text-base text-gray-600 leading-relaxed max-w-2xl mx-auto animate-slide-in-up">
-          Our team of certified engineers and technicians brings decades of combined experience in valve repair and maintenance.
+          {{ t('about.team.description') }}
         </p>
       </div>
 
@@ -35,16 +35,17 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 import CarouselNavigation from '@/components/base/CarouselNavigation.vue'
 import team1 from '@/assets/images/team1.jpg'
 import team2 from '@/assets/images/team2.jpg'
 import team3 from '@/assets/images/team3.jpg'
+import { t } from '@/i18n'
 
-const slides = ref([
-  { image: team1, alt: 'Team at work' },
-  { image: team2, alt: 'Team collaboration' },
-  { image: team3, alt: 'Equipment testing' }
+const slides = computed(() => [
+  { image: team1, alt: t('about.team.alt1') },
+  { image: team2, alt: t('about.team.alt2') },
+  { image: team3, alt: t('about.team.alt3') }
 ])
 
 const currentSlide = ref(0)

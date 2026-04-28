@@ -3,8 +3,8 @@
     <div class="max-w-5xl mx-auto">
       <!-- Header -->
       <div class="text-center mb-12 md:mb-8">
-        <span class="inline-block text-dkm-crimson text-sm font-bold tracking-widest uppercase mb-2 pb-2 border-b-2 border-dkm-crimson">TESTIMONIALS</span>
-        <h2 class="text-4xl lg:text-3xl md:text-2xl font-bold text-dkm-dark m-0">What Customers Say</h2>
+        <span class="inline-block text-dkm-crimson text-sm font-bold tracking-widest uppercase mb-2 pb-2 border-b-2 border-dkm-crimson">{{ t('home.testimonials.label') }}</span>
+        <h2 class="text-4xl lg:text-3xl md:text-2xl font-bold text-dkm-dark m-0">{{ t('home.testimonials.title') }}</h2>
       </div>
 
       <!-- Testimonials Marquee -->
@@ -35,27 +35,28 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed } from 'vue'
 import TestimonialCard from '@/components/base/TestimonialCard.vue'
+import { t } from '@/i18n'
 
-const testimonials = ref([
+const testimonials = computed(() => [
   {
     featured: true,
-    text: 'DKM consistently delivers high-quality valve repair services with excellent turnaround time. Their team is professional and knowledgeable.',
+    text: t('home.testimonial.1'),
     name: 'PT. Pertamina Kilang',
-    role: 'Supervisor PT. Pertamina Kilang'
+    role: t('home.testimonial.1.role')
   },
   {
     featured: false,
-    text: 'We have been working with PT. Duta Katup Mas for over 5 years. Their expertise in PSV maintenance is outstanding.',
+    text: t('home.testimonial.2'),
     name: 'PT. Pertamina Hulu Mahakam',
-    role: 'Operations Head, PT. PHM'
+    role: t('home.testimonial.2.role')
   },
   {
     featured: false,
-    text: 'Reliable partner for all our valve and instrumentation needs. Great customer service and competitive pricing.',
+    text: t('home.testimonial.3'),
     name: 'Badak LNG',
-    role: 'Operations Head Badak LNG'
+    role: t('home.testimonial.3.role')
   }
 ])
 </script>

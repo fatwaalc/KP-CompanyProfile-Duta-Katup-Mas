@@ -4,7 +4,7 @@
       <!-- Logo -->
       <div class="navbar-logo">
         <router-link to="/">
-          <img src="@/assets/images/logofull-dkm.png" alt="Duta Katup Mas" class="logo" />
+          <img src="@/assets/images/logofull-dkm.png" :alt="t('common.logo.alt')" class="logo" />
         </router-link>
       </div>
 
@@ -20,7 +20,7 @@
         <!-- Menu Item: Home -->
         <li class="nav-item">
           <router-link to="/" class="nav-link" :class="{ active: isActive('/') }" @click="closeMobileMenu">
-            Home
+            {{ t('nav.home') }}
           </router-link>
         </li>
 
@@ -28,18 +28,18 @@
         <li class="nav-item dropdown" :class="{ active: activeDropdown === 'about' }" @mouseenter="openDropdown('about')" @mouseleave="closeDropdown">
           <div class="dropdown-header">
             <router-link to="/about#about-hero" class="nav-link" :class="{ active: isActive('/about') }" @click="closeMobileMenu">
-              About Us
+              {{ t('nav.about') }}
             </router-link>
             <button class="dropdown-chevron" @click.prevent.stop="toggleDropdownOnMobile('about')">
               <ChevronDown :size="18" />
             </button>
           </div>
           <ul class="dropdown-menu" :class="{ active: activeDropdown === 'about' }" @mouseenter="openDropdown('about')" @mouseleave="closeDropdown">
-            <li><router-link to="/about#who-we-are" class="dropdown-link" @click="closeMobileMenu">Who We Are</router-link></li>
-            <li><router-link to="/about#vision-mission" class="dropdown-link" @click="closeMobileMenu">Vision & Mission</router-link></li>
-            <li><router-link to="/about#chairman-note" class="dropdown-link" @click="closeMobileMenu">Chairman's Note</router-link></li>
-            <li><router-link to="/about#our-team" class="dropdown-link" @click="closeMobileMenu">Our Team</router-link></li>
-            <li><router-link to="/about#certifications" class="dropdown-link" @click="closeMobileMenu">Certifications</router-link></li>
+            <li><router-link to="/about#who-we-are" class="dropdown-link" @click="closeMobileMenu">{{ t('nav.about.who') }}</router-link></li>
+            <li><router-link to="/about#vision-mission" class="dropdown-link" @click="closeMobileMenu">{{ t('nav.about.vision') }}</router-link></li>
+            <li><router-link to="/about#chairman-note" class="dropdown-link" @click="closeMobileMenu">{{ t('nav.about.chairman') }}</router-link></li>
+            <li><router-link to="/about#our-team" class="dropdown-link" @click="closeMobileMenu">{{ t('nav.about.team') }}</router-link></li>
+            <li><router-link to="/about#certifications" class="dropdown-link" @click="closeMobileMenu">{{ t('nav.about.cert') }}</router-link></li>
           </ul>
         </li>
 
@@ -47,18 +47,18 @@
         <li class="nav-item dropdown" :class="{ active: activeDropdown === 'services' }" @mouseenter="openDropdown('services')" @mouseleave="closeDropdown">
           <div class="dropdown-header">
             <router-link to="/services#services-hero" class="nav-link" :class="{ active: isActive('/services') }" @click="closeMobileMenu">
-              Services
+              {{ t('nav.services') }}
             </router-link>
             <button class="dropdown-chevron" @click.prevent.stop="toggleDropdownOnMobile('services')">
               <ChevronDown :size="18" />
             </button>
           </div>
           <ul class="dropdown-menu" :class="{ active: activeDropdown === 'services' }" @mouseenter="openDropdown('services')" @mouseleave="closeDropdown">
-            <li><router-link to="/services#service-1" class="dropdown-link" @click="closeMobileMenu">Valve Repair</router-link></li>
-            <li><router-link to="/services#service-2" class="dropdown-link" @click="closeMobileMenu">Actuator Maintenance</router-link></li>
-            <li><router-link to="/services#service-3" class="dropdown-link" @click="closeMobileMenu">Flame Arresters</router-link></li>
-            <li><router-link to="/services#service-4" class="dropdown-link" @click="closeMobileMenu">PSV Maintenance</router-link></li>
-            <li><router-link to="/services#service-5" class="dropdown-link" @click="closeMobileMenu">Instrumentation</router-link></li>
+            <li><router-link to="/services#service-1" class="dropdown-link" @click="closeMobileMenu">{{ t('nav.services.valve') }}</router-link></li>
+            <li><router-link to="/services#service-2" class="dropdown-link" @click="closeMobileMenu">{{ t('nav.services.actuator') }}</router-link></li>
+            <li><router-link to="/services#service-3" class="dropdown-link" @click="closeMobileMenu">{{ t('nav.services.flame') }}</router-link></li>
+            <li><router-link to="/services#service-4" class="dropdown-link" @click="closeMobileMenu">{{ t('nav.services.psv') }}</router-link></li>
+            <li><router-link to="/services#service-5" class="dropdown-link" @click="closeMobileMenu">{{ t('nav.services.instrumentation') }}</router-link></li>
           </ul>
         </li>
 
@@ -66,26 +66,35 @@
         <li class="nav-item dropdown" :class="{ active: activeDropdown === 'products' }" @mouseenter="openDropdown('products')" @mouseleave="closeDropdown">
           <div class="dropdown-header">
             <router-link to="/products#products-hero" class="nav-link" :class="{ active: isActive('/products') }" @click="closeMobileMenu">
-              Products & Facilities
+              {{ t('nav.products') }}
             </router-link>
             <button class="dropdown-chevron" @click.prevent.stop="toggleDropdownOnMobile('products')">
               <ChevronDown :size="18" />
             </button>
           </div>
           <ul class="dropdown-menu" :class="{ active: activeDropdown === 'products' }" @mouseenter="openDropdown('products')" @mouseleave="closeDropdown">
-            <li><router-link to="/products#product-1" class="dropdown-link" @click="closeMobileMenu">Visit E-Commerce</router-link></li>
-            <li><router-link to="/products#product-3" class="dropdown-link" @click="closeMobileMenu">Our Facilities</router-link></li>
-            <li><router-link to="/products#product-4" class="dropdown-link" @click="closeMobileMenu">Equipment</router-link></li>
+            <li><router-link to="/products#product-1" class="dropdown-link" @click="closeMobileMenu">{{ t('nav.products.visit') }}</router-link></li>
+            <li><router-link to="/products#product-3" class="dropdown-link" @click="closeMobileMenu">{{ t('nav.products.facilities') }}</router-link></li>
+            <li><router-link to="/products#product-4" class="dropdown-link" @click="closeMobileMenu">{{ t('nav.products.equipment') }}</router-link></li>
           </ul>
         </li>
 
         <!-- Menu Item: Contact Us -->
         <li class="nav-item">
           <router-link to="/contact" class="nav-link" :class="{ active: isActive('/contact') }" @click="closeMobileMenu">
-            Contact Us
+            {{ t('nav.contact') }}
           </router-link>
         </li>
+
       </ul>
+
+      <div class="lang-toggle-wrapper" role="group" aria-label="Language">
+        <div class="lang-toggle">
+          <span class="lang-pill" :class="{ 'is-en': lang === 'en' }"></span>
+          <button class="lang-option" :class="{ active: lang === 'id' }" @click="setLang('id')">ID</button>
+          <button class="lang-option" :class="{ active: lang === 'en' }" @click="setLang('en')">EN</button>
+        </div>
+      </div>
     </div>
   </nav>
 </template>
@@ -94,6 +103,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import ChevronDown from '../base/ChevronDown.vue'
+import { lang, setLang, t } from '@/i18n'
 
 const router = useRouter()
 const route = useRoute()
@@ -231,6 +241,7 @@ const toggleDropdownOnMobile = (dropdown) => {
   gap: 0;
   align-items: center;
   margin: 0;
+  margin-left: auto;
 }
 
 .nav-item {
@@ -397,6 +408,64 @@ const toggleDropdownOnMobile = (dropdown) => {
   box-shadow: inset 8px 0 15px rgba(220, 20, 60, 0.05);
 }
 
+/* Language Toggle */
+.lang-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 0.75rem;
+}
+
+.lang-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: #eef2f7;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 3px;
+  min-width: 86px;
+  overflow: hidden;
+}
+
+.lang-option {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  border: 0;
+  background: transparent;
+  color: #4b5563;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.lang-option.active {
+  color: #ffffff;
+}
+
+.lang-pill {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  background: #dc143c;
+  border-radius: 999px;
+  transition: transform 0.25s ease;
+  z-index: 1;
+  box-shadow: 0 6px 14px rgba(220, 20, 60, 0.25);
+}
+
+.lang-pill.is-en {
+  transform: translateX(100%);
+}
+
+.lang-toggle:focus-within {
+  box-shadow: 0 0 0 2px rgba(220, 20, 60, 0.2);
+}
+
 /* Hamburger Menu */
 .hamburger {
   display: none;
@@ -441,21 +510,40 @@ const toggleDropdownOnMobile = (dropdown) => {
 }
 
 @media (max-width: 768px) {
+  .navbar-container {
+    padding: 0.4rem 1rem;
+  }
+
+  /* Urutan flex: Logo (1) → Nav Menu (2) → Lang Toggle (3) → Hamburger (4) */
+  .navbar-logo {
+    order: 1;
+    flex-shrink: 0;
+  }
+
+  .lang-toggle-wrapper {
+    order: 3;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .lang-toggle {
+    width: 86px;
+  }
+
   .logo {
     height: 60px;
     max-width: 200px;
   }
 
-  .navbar-container {
-    padding: 0.4rem 1rem;
-  }
-
   .hamburger {
     display: flex;
+    order: 4;
+    margin-left: 0.75rem;
   }
 
   /* Mobile Menu */
   .nav-menu {
+    order: 2;
     position: fixed;
     left: -100%;
     top: 0;

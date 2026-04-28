@@ -3,7 +3,7 @@
     <div class="max-w-6xl mx-auto">
       <!-- Header -->
       <h2 class="text-4xl md:text-3xl sm:text-2xl font-bold text-dkm-dark m-0 mb-10 animate-slide-in-down">
-        Our Location
+        {{ t('home.location.title') }}
       </h2>
 
       <!-- Map Container -->
@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-// Location Section Component
+import { t } from '@/i18n'
 </script>
 
 <style scoped>

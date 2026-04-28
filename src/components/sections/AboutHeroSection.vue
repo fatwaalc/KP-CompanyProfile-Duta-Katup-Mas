@@ -1,15 +1,15 @@
 <template>
   <section id="about-hero" class="about-hero">
     <div class="hero-content">
-      <span class="hero-label">About Us</span>
+      <span class="hero-label">{{ t('about.hero.label') }}</span>
       <h1 class="hero-title">PT. Duta Katup Mas</h1>
-      <p class="hero-subtitle">Supplying mechanical units like gate, ball, and control valves to the oil and gas industry since 1990.</p>
+      <p class="hero-subtitle">{{ t('about.hero.subtitle') }}</p>
     </div>
   </section>
 </template>
 
 <script setup>
-// About Hero Section
+import { t } from '@/i18n'
 </script>
 
 <style scoped>
