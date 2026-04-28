@@ -7,16 +7,28 @@
         <h2 class="text-4xl lg:text-3xl md:text-2xl font-bold text-dkm-dark m-0">What Customers Say</h2>
       </div>
 
-      <!-- Testimonials Grid -->
-      <div class="testimonials-grid grid gap-8 md:gap-6">
-        <TestimonialCard
-          v-for="(testimonial, index) in testimonials"
-          :key="index"
-          :text="testimonial.text"
-          :name="testimonial.name"
-          :role="testimonial.role"
-          :featured="testimonial.featured"
-        />
+      <!-- Testimonials Marquee -->
+      <div class="testimonials-marquee">
+        <div class="marquee-track">
+          <TestimonialCard
+            v-for="(testimonial, index) in testimonials"
+            :key="index"
+            class="marquee-card"
+            :text="testimonial.text"
+            :name="testimonial.name"
+            :role="testimonial.role"
+            :featured="testimonial.featured"
+          />
+          <TestimonialCard
+            v-for="(testimonial, index) in testimonials"
+            :key="`duplicate-${index}`"
+            class="marquee-card"
+            :text="testimonial.text"
+            :name="testimonial.name"
+            :role="testimonial.role"
+            :featured="testimonial.featured"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -49,13 +61,56 @@ const testimonials = ref([
 </script>
 
 <style scoped>
-.testimonials-grid {
-  grid-template-columns: 1fr;
+.testimonials-marquee {
+  overflow: hidden;
+  width: 100%;
+  padding: 28px 0 64px;
 }
 
-@media (min-width: 1024px) {
-  .testimonials-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: testimonials-marquee 35s linear infinite;
+  padding: 8px 0;
+}
+
+.testimonials-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-card {
+  flex: 0 0 340px;
+}
+
+@keyframes testimonials-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .marquee-track {
+    gap: 1.5rem;
+  }
+
+  .marquee-card {
+    flex-basis: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee-card {
+    flex-basis: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
   }
 }
 </style>
