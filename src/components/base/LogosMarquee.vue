@@ -2,27 +2,21 @@
   <div class="logos-marquee">
     <div class="marquee-content">
       <div
-        v-for="(item, index) in items"
-        :key="index"
-        class="marquee-item"
+        v-for="groupIndex in 2"
+        :key="`group-${groupIndex}`"
+        class="marquee-group"
       >
-        <img
-          :src="item.logo"
-          :alt="item.name"
-          class="marquee-logo"
-        />
-      </div>
-      <!-- Duplicate untuk seamless loop -->
-      <div 
-        v-for="(item, index) in items" 
-        :key="'duplicate-' + index"
-        class="marquee-item"
-      >
-        <img
-          :src="item.logo"
-          :alt="item.name"
-          class="marquee-logo"
-        />
+        <div
+          v-for="(item, index) in items"
+          :key="`group-${groupIndex}-${index}`"
+          class="marquee-item"
+        >
+          <img
+            :src="item.logo"
+            :alt="item.name"
+            class="marquee-logo"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -52,9 +46,15 @@ defineProps({
 
 .marquee-content {
   display: flex;
+  gap: 0;
+  animation: marquee 20s linear infinite;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-group {
+  display: flex;
   gap: 2rem;
-  animation: marquee 30s linear infinite;
-  width: fit-content;
 }
 
 @keyframes marquee {
