@@ -20,7 +20,7 @@
 <script setup>
 import { ref } from 'vue'
 import CTAButtonGroup from '@/components/base/CTAButtonGroup.vue'
-import workshopImage from '@/assets/images/workshopfake.jpg'
+import workshopImage from '@/assets/images/heroesdkmnew.jpg'
 import { t } from '@/i18n'
 
 // Background image dari assets

@@ -65,6 +65,7 @@ import { FileCheck } from 'lucide-vue-next'
 import CarouselNavigation from '@/components/base/CarouselNavigation.vue'
 import sertif1 from '@/assets/images/sertif1.png'
 import sertif2 from '@/assets/images/sertif2.png'
+import certificateIso from '@/assets/images/certificateiso.png'
 import { t } from '@/i18n'
 
 // Carousel images data
@@ -84,6 +85,10 @@ const certImages = computed(() => [
   {
     image: sertif2,
     alt: t('about.certifications.alt4')
+  },
+  {
+    image: certificateIso,
+    alt: t('about.certifications.alt5')
   }
 ])
 

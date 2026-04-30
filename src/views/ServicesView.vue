@@ -57,11 +57,11 @@
 import { computed } from 'vue'
 import ServicesHeroSection from '@/components/sections/ServicesHeroSection.vue'
 import ServiceDetailCard from '@/components/sections/ServiceDetailCard.vue'
-import valveImage from '@/assets/images/valvefake.jpg'
-import actuatorImage from '@/assets/images/actuatorfake.jpg'
-import flameareImage from '@/assets/images/flamearesfake.jpg'
-import psvImage from '@/assets/images/psvfake.jpg'
-import instrumentImage from '@/assets/images/instrumentservicefake.jpg'
+import valveImage from '@/assets/images/valverepair.png'
+import actuatorImage from '@/assets/images/actuatorservice.png'
+import flameareImage from '@/assets/images/flameservice.png'
+import psvImage from '@/assets/images/psvservice.png'
+import instrumentImage from '@/assets/images/instrumentservice.png'
 import { t } from '@/i18n'
 
 const serviceDescriptions = computed(() => ({

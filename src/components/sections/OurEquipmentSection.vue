@@ -26,8 +26,8 @@ const equipmentList = computed(() => [
     title: t('products.equipment.welding.title'),
     description: t('products.equipment.welding.desc'),
     images: [
-      new URL('@/assets/images/weldingoverlay.jpg', import.meta.url).href,
-      new URL('@/assets/images/weldingoverlay2.jpg', import.meta.url).href
+      new URL('@/assets/images/weldingmachine.png', import.meta.url).href,
+      new URL('@/assets/images/weldingmachine.png', import.meta.url).href
     ],
     youtubeLink: 'https://youtu.be/od2mhrhBNH4'
   },
@@ -35,8 +35,8 @@ const equipmentList = computed(() => [
     title: t('products.equipment.machine.title'),
     description: t('products.equipment.machine.desc'),
     images: [
-      new URL('@/assets/images/generalmachine.jpg', import.meta.url).href,
-      new URL('@/assets/images/generalmachine2.jpg', import.meta.url).href
+      new URL('@/assets/images/generalmachine.png', import.meta.url).href,
+      new URL('@/assets/images/generalmachine.png', import.meta.url).href
     ],
     youtubeLink: 'https://youtu.be/aXXy0Jau-b8'
   }

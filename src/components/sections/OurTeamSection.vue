@@ -37,9 +37,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import CarouselNavigation from '@/components/base/CarouselNavigation.vue'
-import team1 from '@/assets/images/team1.jpg'
-import team2 from '@/assets/images/team2.jpg'
-import team3 from '@/assets/images/team3.jpg'
+import team1 from '@/assets/images/team1.png'
+import team2 from '@/assets/images/team2.png'
+import team3 from '@/assets/images/team3.png'
 import { t } from '@/i18n'
 
 const slides = computed(() => [

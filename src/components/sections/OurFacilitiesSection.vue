@@ -33,32 +33,36 @@ import { t } from '@/i18n'
 
 // Workshop images
 const workshopImages = ref([
-  new URL('@/assets/images/workshopfake2.jpg', import.meta.url).href,
-  new URL('@/assets/images/workshopfake3.jpg', import.meta.url).href,
-  new URL('@/assets/images/workshopfake4.jpg', import.meta.url).href
+  new URL('@/assets/images/blastingpantingarea.png', import.meta.url).href,
+  new URL('@/assets/images/flangestoragearea.png', import.meta.url).href,
+  new URL('@/assets/images/machinearea.png', import.meta.url).href,
+  new URL('@/assets/images/monitoringtestarea.png', import.meta.url).href,
+  new URL('@/assets/images/overhaul area.png', import.meta.url).href,
+  new URL('@/assets/images/storagearea.png', import.meta.url).href,
+  new URL('@/assets/images/weldingarea.png', import.meta.url).href
 ])
 
 // Workshop descriptions
 const workshopDescriptions = computed(() => [
   t('products.facilities.workshop1'),
   t('products.facilities.workshop2'),
-  t('products.facilities.workshop3')
+  t('products.facilities.workshop3'),
+  t('products.facilities.workshop4'),
+  t('products.facilities.workshop5'),
+  t('products.facilities.workshop6'),
+  t('products.facilities.workshop7')
 ])
 
 // Office images
 const officeImages = ref([
-  new URL('@/assets/images/meetingroom.jpg', import.meta.url).href,
-  new URL('@/assets/images/officefake.jpg', import.meta.url).href,
-  new URL('@/assets/images/pantryfake.jpg', import.meta.url).href,
-  new URL('@/assets/images/receptionfake.jpg', import.meta.url).href
+  new URL('@/assets/images/meetingroomarea.jpeg', import.meta.url).href,
+  new URL('@/assets/images/resepsionisarea.jpeg', import.meta.url).href
 ])
 
 // Office descriptions
 const officeDescriptions = computed(() => [
   t('products.facilities.office1'),
-  t('products.facilities.office2'),
-  t('products.facilities.office3'),
-  t('products.facilities.office4')
+  t('products.facilities.office2')
 ])
 </script>
 
