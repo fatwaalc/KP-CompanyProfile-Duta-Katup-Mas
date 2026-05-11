@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white py-10 sm:py-12 lg:py-16 xl:py-20 px-4 sm:px-5 lg:px-6">
+  <section class="bg-dkm-light-blue py-10 sm:py-12 lg:py-16 xl:py-20 px-4 sm:px-5 lg:px-6">
     <div class="max-w-6xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-start">
       <!-- Left Column: Content -->
       <div class="flex items-start">

@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-linear-to-br from-dkm-light-blue to-[#d4e3f0] py-20 px-5">
+  <section class="bg-white py-20 px-5">
     <div class="max-w-3xl mx-auto">
       <!-- Header -->
       <div class="text-center mb-15">

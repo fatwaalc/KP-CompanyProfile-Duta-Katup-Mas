@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white py-10 sm:py-12 lg:py-16 xl:py-20 px-4 sm:px-5 lg:px-8">
+  <section class="bg-dkm-light-blue py-10 sm:py-12 lg:py-16 xl:py-20 px-4 sm:px-5 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <!-- Label -->
       <span class="inline-block text-dkm-crimson text-xs sm:text-sm font-bold tracking-widest uppercase mb-4 pb-3 border-b-2 border-dkm-crimson animate-slide-in-left">

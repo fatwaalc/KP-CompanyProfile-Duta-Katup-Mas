@@ -32,7 +32,7 @@ import { t } from '@/i18n'
 
 <style scoped>
 .online-store {
-  background: #f8f9fa;
+  background: #e8f0f7;
   padding: 80px 20px;
 }
 

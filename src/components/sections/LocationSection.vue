@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white py-20 md:py-16 sm:py-12 px-4 sm:px-5 lg:px-6">
+  <section class="bg-dkm-light-blue py-20 md:py-16 sm:py-12 px-4 sm:px-5 lg:px-6">
     <div class="max-w-6xl mx-auto">
       <!-- Header -->
       <h2 class="text-4xl md:text-3xl sm:text-2xl font-bold text-dkm-dark m-0 mb-10 animate-slide-in-down">

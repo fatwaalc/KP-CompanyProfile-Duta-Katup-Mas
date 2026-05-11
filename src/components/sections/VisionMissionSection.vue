@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 md:py-12 sm:py-8 px-8 md:px-4 bg-linear-to-br from-dkm-light-blue to-[#d4e3f0]">
+  <section class="py-16 md:py-12 sm:py-8 px-8 md:px-4 bg-white">
     <div class="vision-mission-grid max-w-5xl mx-auto">
       <!-- Vision Card -->
       <VisionMissionCard

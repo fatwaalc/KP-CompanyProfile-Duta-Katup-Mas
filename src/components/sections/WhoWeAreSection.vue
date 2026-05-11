@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 md:py-12 sm:py-8 px-6 md:px-4 bg-white">
+  <section class="py-16 md:py-12 sm:py-8 px-6 md:px-4 bg-dkm-light-blue">
     <div class="who-grid max-w-6xl mx-auto">
       <!-- Heading -->
       <div class="who-heading">
